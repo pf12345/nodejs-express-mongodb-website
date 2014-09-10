@@ -1,5 +1,0 @@
-2014-4-24 21:3:15=>login check user: null
-2014-4-24 21:3:23=>login check user: null
-2014-4-24 21:3:36=>register mongodb insert user success,user: [{"email":"pf12345","password":"2232258pbsu","_id":"53590ba869edea2017ee0b8f"}]
-2014-4-24 21:3:38=>login check user: {"email":"pf12345","password":"2232258pbsu","_id":"53590ba869edea2017ee0b8f"}
-2014-4-24 21:5:44=>login check user: {"email":"pf12345","password":"2232258pbsu","_id":"53590ba869edea2017ee0b8f"}
