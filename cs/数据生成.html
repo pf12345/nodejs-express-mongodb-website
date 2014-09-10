@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <script src="jquery-1.7.2.min.js"></script>
+    <style>
+        table {
+            border: none;
+            text-align: center;
+        }
+        input {
+            background: none;
+            border: 1px solid #cbcbcb;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="hangNum"/><input type="button" id="chanNum" value="行数"/>
+<table id="table">
+    <tr>
+        <td>行号</td>
+        <td>表1</td>
+        <td>表2</td>
+        <td>表3</td>
+        <td>表4</td>
+        <td style="width: 60px">平均值</td>
+        <td style="width: 60px">本次</td>
+        <td style="width: 60px">累计</td>
+    </tr>
+    <tr id="mainNum">
+        <td>0</td>
+        <td><input class="m1" type="text"/></td>
+        <td><input class="m2" type="text"/></td>
+        <td><input class="m3" type="text"/></td>
+        <td><input class="m4" type="text"/></td>
+        <td class="m5 t50"></td>
+        <td class="m6"></td>
+        <td class="m7"></td>
+    </tr>
+</table>
+<input type="button" id="submit" value="生成"/>
+<script>
+
+    $('#chanNum').click(function(){
+        $('#table')[0].innerHTML = '';
+        $('#table')[0].innerHTML+='<tr>' +
+                '<td>行号</td>' +
+                '<td>表1</td>' +
+                '<td>表2</td>' +
+                '<td>表3</td>' +
+                '<td>表4</td>' +
+                '<td style="width: 60px">平均值</td>' +
+                '<td style="width: 60px">本次</td>' +
+                '<td style="width: 60px">累计</td>' +
+                '</tr>' +
+                '<tr id="mainNum">' +
+                '<td>0</td>' +
+                '<td><input class="m1" type="text"/></td>' +
+                '<td><input class="m2" type="text"/></td>' +
+                '<td><input class="m3" type="text"/></td>' +
+                '<td><input class="m4" type="text"/></td>' +
+                '<td class="m5 t50"></td>' +
+                '<td class="m6"></td>' +
+                '<td class="m7"></td>' +
+                '</tr>';
+
+        var hangNum = parseInt($('#hangNum').val());
+        for(var i = 1; i<=hangNum;i++){
+            $('#table')[0].innerHTML +='<tr id="N2">'+
+                    '<td>'+i+'</td>' +
+                    '<td class="t1'+i+'"></td>' +
+                    '<td class="t2'+i+'"></td>' +
+                    '<td class="t3'+i+'"></td>' +
+                    '<td class="t4'+i+'"></td>' +
+                    '<td class="t5'+i+'"></td>' +
+                    '<td><input class="t6'+i+'" type="text"/></td>' +
+                    '<td class="t7'+i+'"></td>' +
+                    '</tr>'
+        }
+
+    });
+
+
+
+
+    $(document).ready(function () {
+        function getNum(className) {
+            return parseFloat($(className).val());
+        }
+
+        $('#submit').click(function () {
+            var hangNum = parseInt($('#hangNum').val());
+            var mAvage = (getNum('.m1') + getNum('.m2') + getNum('.m3') + getNum('.m4'))/4;
+
+            /* 第一行主要平均值*/
+            $('.m5').html(two(mAvage));
+
+
+            /**/
+
+
+            /*生成数据*/
+
+
+            var total = 0;
+            for(var i = 1;i<=hangNum;i++){
+
+                var iputNum = parseFloat($('.t6'+i).val());
+                console.log($('.t6'+i).val()+'----'+iputNum);
+                console.log(parseInt((iputNum).mul(100)));
+                console.log(total+'----'+parseInt((iputNum).mul(100)));
+                total = total.mul(100) + parseInt((iputNum).mul(100));
+                console.log(total)
+                total = Math.round(total).div(100);
+                console.log(total);
+                /*累计数据*/
+                $('.t7'+i).html(total);
+
+                /*这个平均数*/
+                var thisAve = (two(mAvage - total));
+
+
+                if(Math.abs(iputNum) > 0.5) {
+                    getFourNum(0.1,total);
+                }else if(Math.abs(iputNum) <= 0.5 && Math.abs(iputNum) > 0.1 ) {
+                    getFourNum(0.05,total);
+                }else if(Math.abs(iputNum) <= 0.1 && Math.abs(iputNum) > 0.05){
+                    getFourNum(0.02,total);
+                }else if(Math.abs(iputNum) <=0.05 && Math.abs(iputNum) > 0.03){
+                   getFourNum(0.01,total)
+                }else{
+                    getFourNum(0,total);
+                }
+
+
+                function getFourNum(num,total){
+                        var av1 = getNum('.m1') - (total + two(Math.random()*num));
+                    console.log(two(Math.random()*num)+'---'+total+'---'+getNum('.m1'));
+                        var av2 = getNum('.m2') - (total - two(Math.random()*num));
+                        var av3 = getNum('.m3') - (total + two(Math.random()*num));
+                        if(num == 0) {
+                            var av4 = getNum('.m4') - (total + two(Math.random()*num));
+                        }else {
+
+                            var av4 = thisAve*4 - (av1 + av2 + av3);
+                        }
+                    $('.t1'+i).html(two(av1));
+                    $('.t2'+i).html(two(av2));
+                    $('.t3'+i).html(two(av3));
+                    $('.t4'+i).html(two(av4));
+                    $('.t5'+i).html(thisAve);
+                }
+
+
+
+            }
+        });
+
+        function two(num) {
+            return Math.round(num*100)/100
+        }
+
+
+
+    });
+
+
+
+    //除法函数，用来得到精确的除法结果
+    //说明：javascript的除法结果会有误差，在两个浮点数相除的时候会比较明显。这个函数返回较为精确的除法结果。
+    //调用：accDiv(arg1,arg2)
+    //返回值：arg1除以arg2的精确结果
+    function accDiv(arg1,arg2){
+        var t1=0,t2=0,r1,r2;
+        try{t1=arg1.toString().split(".")[1].length}catch(e){}
+        try{t2=arg2.toString().split(".")[1].length}catch(e){}
+        with(Math){
+            r1=Number(arg1.toString().replace(".",""));
+            r2=Number(arg2.toString().replace(".",""));
+            return (r1/r2)*pow(10,t2-t1);
+        }
+    }
+    //给Number类型增加一个div方法，调用起来更加方便。
+    Number.prototype.div = function (arg){
+        return accDiv(this, arg);
+    };
+    //乘法函数，用来得到精确的乘法结果
+    //说明：javascript的乘法结果会有误差，在两个浮点数相乘的时候会比较明显。这个函数返回较为精确的乘法结果。
+    //调用：accMul(arg1,arg2)
+    //返回值：arg1乘以arg2的精确结果
+    function accMul(arg1,arg2)
+    {
+        var m=0,s1=arg1.toString(),s2=arg2.toString();
+        try{m+=s1.split(".")[1].length}catch(e){}
+        try{m+=s2.split(".")[1].length}catch(e){}
+        return Number(s1.replace(".",""))*Number(s2.replace(".",""))/Math.pow(10,m);
+    }
+    //给Number类型增加一个mul方法，调用起来更加方便。
+    Number.prototype.mul = function (arg){
+        return accMul(arg, this);
+    };
+    //加法函数，用来得到精确的加法结果
+    //说明：javascript的加法结果会有误差，在两个浮点数相加的时候会比较明显。这个函数返回较为精确的加法结果。
+    //调用：accAdd(arg1,arg2)
+    //返回值：arg1加上arg2的精确结果
+    function accAdd(arg1,arg2){
+        var r1,r2,m;
+        try{r1=arg1.toString().split(".")[1].length}catch(e){r1=0}
+        try{r2=arg2.toString().split(".")[1].length}catch(e){r2=0}
+        m=Math.pow(10,Math.max(r1,r2));
+        return (arg1*m+arg2*m)/m;
+    }
+    //给Number类型增加一个add方法，调用起来更加方便。
+    Number.prototype.add = function (arg){
+        return accAdd(arg,this);
+    }
+    //减法函数
+    function accSub(arg1,arg2){
+        var r1,r2,m,n;
+        try{r1=arg1.toString().split(".")[1].length}catch(e){r1=0}
+        try{r2=arg2.toString().split(".")[1].length}catch(e){r2=0}
+        m=Math.pow(10,Math.max(r1,r2));
+        //last modify by deeka
+        //动态控制精度长度
+        n=(r1>=r2)?r1:r2;
+        return ((arg2*m-arg1*m)/m).toFixed(n);
+    }
+    ///给number类增加一个sub方法，调用起来更加方便
+    Number.prototype.sub = function (arg){
+        return accSub(arg,this);
+    }
+
+</script>
+</body>
+</html>

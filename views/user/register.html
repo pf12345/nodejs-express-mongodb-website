@@ -1,0 +1,23 @@
+{% extends '../shared/layout.html' %}
+{% block content %}
+<div id="contents" class="register">
+    <div class="clearfix">
+        <h1>欢迎加入车谈</h1>
+
+        <form method="post" action="/user/register">
+            <div class="name">
+                <label>名号</label><input name="name" type="text"/>
+            </div>
+            <div class="email">
+                <label>邮箱</label><input name="email" type="text"/>
+            </div>
+            <div class="pwd">
+                <label>密码</label><input name="password" type="password"/>
+            </div>
+            <div class="submit">
+                <input type="submit" disabled value="注册"/>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+2014-6-2 15:2:22=>login check user: null
+2014-6-2 15:2:30=>login check user: null
+2014-6-2 15:18:30=>login check user: {"email":"pf12345","password":"123456","_id":"531f18dddf5ba2401c912ea4"}
+2014-6-2 15:23:17=>login check user: {"email":"pf12345","password":"12345","_id":"531f1ace73d691e40ea2efa4"}
+2014-6-2 15:23:28=>login check user: {"email":"pf123456","password":"123456","_id":"531f1a1e4ab62690133303a3"}
+2014-6-2 15:23:43=>register mongodb insert user success,user: 
+2014-6-2 15:23:43=>register mongodb insert user error: MongoError: Connection Closed By Application
+2014-6-2 15:23:43=>login check user: null
+2014-6-2 15:23:54=>login check user: {"email":"pf1234","password":"1234","_id":"538c267f33aaea3405402f15"}
+2014-6-2 15:24:5=>register mongodb insert user success,user: 
+2014-6-2 15:24:5=>register mongodb insert user error: MongoError: Connection Closed By Application
+2014-6-2 15:24:5=>login check user: null
+2014-6-2 15:26:50=>login check user: {"email":"payne","password":"1234","_id":"538c269533aaea3405402f16"}
