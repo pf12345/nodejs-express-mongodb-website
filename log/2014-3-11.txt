@@ -1,0 +1,9 @@
+2014-3-11 22:17:13=>mongodb insert user success [object Object]
+2014-3-11 22:18:34=>[object Object]
+2014-3-11 22:19:44=>{"email":"pf12345","password":"12345","_id":"531f1ace73d691e40ea2efa4"}
+2014-3-11 22:25:38=>mongodb insert user success,user: [{"email":"suqin123","password":"123","_id":"531f1ce213dd67d40bfffcc1"}]
+2014-3-11 22:28:18=>login check user: {"email":"suqin123","password":"123","_id":"531f1ce213dd67d40bfffcc1"}
+2014-3-11 22:54:14=>question add mongodb insert question success,question: [{"title":"科目二好考吗？","content":"科目二好不好考，一般都得补考几次呢？","_id":"531f2396803923e4183c3d52"}]
+2014-3-11 22:56:24=>question add mongodb insert question success,question: [{"title":"驾照考下来一般得多少钱？","content":"一个驾照考下来一般要多少钱，都有哪些用？","_id":"531f24182d2e0ca41d1db8ff"}]
+2014-3-11 22:58:21=>question add mongodb insert question success,question: [{"title":"成都哪个驾校比较正规/","content":"最近想学驾照，不知道成都哪个驾校比较好，谢谢！","_id":"531f248d5788593417ef8da4"}]
+2014-3-11 23:47:20=>question add mongodb insert question success,question: [{"title":"现在驾校到底有多黑？","content":"目前驾校到底有好黑哦？这收钱都怎么样呢？","viewNum":0,"resNum":0,"_id":"531f3008600669181472adf4"}]

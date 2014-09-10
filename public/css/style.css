@@ -1,0 +1,305 @@
+/* -------------------------------------------------------------------------------
+
+    0.  Reset & Clearfix
+    1.  Document Setup
+
+*/
+/* ------------------------------------------------------------------------------- */
+/*  0.  Reset & Clearfix (http://meyerweb.com/eric/tools/css/reset/)
+/* ------------------------------------------------------------------------------- */
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,and,
+address,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,
+b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,
+th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,
+nav,output,ruby,section,summary,time,mark,audio,video,input,textarea,select
+{background:transparent;border:0;font-size:100%;margin:0;outline:0;padding:0;vertical-align:baseline}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+
+body{line-height:1}
+
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+
+blockquote,q{quotes:none}
+
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+
+del{text-decoration:line-through}
+
+hr{background:transparent;border:0;clear:both;color:transparent;height:1px;margin:0;padding:0}
+
+mark{background-color:#ffffb3;font-style:italic}
+
+input,select{vertical-align:middle}
+
+ins{background-color:red;color:white;text-decoration:none}
+
+ol,ul{list-style:none}
+
+table{border-collapse:collapse;border-spacing:0}
+
+.clear{clear:both;display:block;height:0;overflow:hidden;visibility:hidden;width:0;margin: 0}
+
+.clearfix:after{clear:both;content:' ';display:block;font-size:0;height:0;line-height:0;
+    visibility:hidden;width:0}
+
+* html .clearfix,:first-child+html .clearfix{zoom:1}
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+
+.circle{
+    border-radius: 50%;
+}
+
+input[type=button] {
+    cursor: pointer;
+}
+/* ------------------------------------------------------------------------------- */
+/*  1.  Document Setup
+/* ------------------------------------------------------------------------------- */
+
+html { overflow-x: hidden; }
+body {
+    background:#eef3fa;
+    color: #5d5d5d;
+    font: 11px/1.7 'Open Sans', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+    -webkit-text-size-adjust: 100%;
+}
+a, a > * {
+    color: #a1b6c7;
+    text-decoration: none;
+    -webkit-transition: background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out, outline .2s ease;
+    -moz-transition: background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out, outline .2s ease;
+    -ms-transition: background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out, outline .2s ease;
+    -o-transition: background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out, outline .2s ease;
+    transition: background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out, outline .2s ease;
+}
+a:hover, a > *:hover {
+    color: #54728c;
+}
+
+h1 { font-size: 30px; }
+h2 { font-size: 24px; }
+h3 { font-size: 18px; font-weight: 400; }
+h4 { font-size: 16px; font-weight: 400; }
+h5 { font-size: 12px; }
+h6 { font-size: 11px; }
+
+
+/*  Forms  --------------------------------*/
+
+.redText{
+    color:#d73300
+}
+
+#showMsg{
+    min-width: 100px;
+    text-align: center;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -15px;
+    z-index: 255;
+    display: none;
+    line-height: 30px;
+    padding:0px 20px;
+}
+
+/* ------------------------------------------------------------------------------- */
+/*  2. index
+/* ------------------------------------------------------------------------------- */
+
+#index-top{
+    height: 300px;
+    width: 100%;
+    background-color: #54728c;
+    color: #fff;
+    padding-top: 50px;
+}
+
+#index-top *{
+    color: #fff;
+}
+
+#index-top>div{
+    margin-left: 115px;
+    width: 307px;
+}
+
+.index-top-left{
+    margin-top: 30px;
+}
+.index-top-left h3{
+    text-indent: 2em;
+}
+#index-top .index-top-right{
+    margin-right: 115px;
+    width: 221px;
+}
+#index-top input[type=button]{
+    width: 220px;
+    font-size: 18px;
+    letter-spacing: 4px;
+}
+.index-top-right h3{
+    cursor: pointer;
+}
+#index-bottom{
+    background-color: #fff;
+    padding:40px 115px;
+}
+#index-bottom ul li{
+    padding: 6px 0;
+}
+#index-bottom img{
+    margin-right: 15px;
+}
+#index-bottom>div{
+    width: 300px;
+}
+#index-bottom p{
+    margin-left: 45px;
+}
+#index-login{
+    display: none;
+}
+
+.index-questions > div {
+    width: 40%;
+    padding: 5%;
+}
+
+.index-questions img {
+    margin-right: 12px;
+}
+
+.index-answer {
+    margin-left: 44px;
+}
+/* ------------------------------------------------------------------------------- */
+/*  2. explore
+/* ------------------------------------------------------------------------------- */
+
+.explore .navigation {
+    margin: 0;
+}
+
+.explore .section {
+    background: none;
+}
+.mc {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0,0,0,.5);
+    top: 0;
+    left: 0;
+    display: none;
+}
+.quiz {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    margin-left: -250px;
+    z-index: 99;
+    background: #fff;
+    padding:0 0 40px;
+    width: 500px;
+    display: none;
+}
+
+.quiz form {
+    padding: 0 40px;
+}
+
+.quiz h1 {
+    margin-bottom: 40px;
+    font-size: 16px;
+    background: #e2e2e2;
+    padding: 6px 20px;
+}
+.quiz input[type=text], .message textarea {
+    border: 1px solid #e2e2e2;
+    padding: 5px 10px;
+}
+
+/* ------------------------------------------------------------------------------- */
+/*  3. login
+/* ------------------------------------------------------------------------------- */
+.login {
+    display: inline-block;
+    float: left;
+    margin: 20px 0 0 20px;
+}
+
+.login input {
+    border: 1px solid #e2e2e2;
+    padding: 5px 10px;
+    margin-left: 7px;
+    color: #fff;
+    border-radius: 3px;
+    line-height: 1;
+}
+
+.login input[type=button] {
+    background: url(../images/interface.png) no-repeat;
+    border: none;
+    color: #fff;
+    padding: 8px 15px;
+    background-position: -107px 0;
+}
+
+.login input[type=button]:hover {
+    background-position: 0 0;
+}
+
+/* ------------------------------------------------------------------------------- */
+/*  4. register
+/* ------------------------------------------------------------------------------- */
+.register h1 {
+    margin: 10px 0 40px;
+}
+
+.register form {
+    margin-bottom: 120px;
+}
+
+.register form div {
+    margin-bottom: 20px;
+}
+
+.register form input {
+    border: 1px solid #757575;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-left: 20px;
+    line-height: 1;
+}
+
+.register .submit {
+    margin-left: 25px;
+}
+
+.register .submit input {
+    cursor: pointer;
+}
+
+.register .submit .enabled {
+    color: #ffffff;
+    background: #3fa156;
+    border: 1px solid #528641;
+}
