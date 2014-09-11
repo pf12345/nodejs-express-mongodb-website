@@ -19,4 +19,4 @@ exports.dbConfig = function () {
  * 端口配置
  * @type {number}
  */
-exports.port = 8080;
+exports.port = 8082;

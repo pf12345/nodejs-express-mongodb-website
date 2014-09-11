@@ -1,0 +1,45 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/controllers/user.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/simple-mvc/lib.js" />
+        <item url="file://$PROJECT_DIR$/controllers/question.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/simple-mvc/test/index.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/multi-process-session/lib/redisHelper.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/simple-mvc/example/app.js" />
+        <item url="file://$PROJECT_DIR$/Bll/userBll.js" />
+        <item url="file://$PROJECT_DIR$/Bll/questionBll.js" />
+        <item url="file://$PROJECT_DIR$/Dal/dbHelper.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/multi-process-session/lib/index.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/simple-mvc/example/controllers/home.js" />
+        <item url="file://$PROJECT_DIR$/controllers/resource.js" />
+        <item url="file://$PROJECT_DIR$/controllers/home.js" />
+        <item url="file://$PROJECT_DIR$/Dal/newDb.js" />
+        <item url="file://$PROJECT_DIR$/Dal/dbQuestion.js" />
+        <item url="file://$PROJECT_DIR$/controllers/explore.js" />
+        <item url="file://$PROJECT_DIR$/Dal/dbUser.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/controllers/user.js" />
+      <root url="file://$PROJECT_DIR$/controllers/question.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/simple-mvc/lib.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/simple-mvc/test/index.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/multi-process-session/lib/redisHelper.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/simple-mvc/example/app.js" />
+      <root url="file://$PROJECT_DIR$/Bll/userBll.js" />
+      <root url="file://$PROJECT_DIR$/Bll/questionBll.js" />
+      <root url="file://$PROJECT_DIR$/Dal/dbHelper.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/multi-process-session/lib/index.js" />
+      <root url="file://$PROJECT_DIR$/controllers/resource.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/simple-mvc/example/controllers/home.js" />
+      <root url="file://$PROJECT_DIR$/Dal/newDb.js" />
+      <root url="file://$PROJECT_DIR$/controllers/home.js" />
+      <root url="file://$PROJECT_DIR$/Dal/dbQuestion.js" />
+      <root url="file://$PROJECT_DIR$/controllers/explore.js" />
+      <root url="file://$PROJECT_DIR$/Dal/dbUser.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
