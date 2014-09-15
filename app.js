@@ -4,7 +4,6 @@
  */
 
 var express = require('express');
-var routes = require('./routes');
 var http = require('http');
 var path = require('path');
 var MongoStore = require('connect-mongo')(express);
@@ -22,6 +21,8 @@ var app = express();
 //routes(app);
 // all environments
 
+app.use(express.cookieParser('lalala')); //cookie处理
+require("multi-process-session")(app, 'cookie');
 
 app.configure(function (){
     app.set('views', path.join(__dirname, 'views'));
@@ -39,17 +40,6 @@ app.configure(function (){
 });
 require('simple-mvc')(app);//配置mvc
 
-//app.get('/',routes.index);
-//app.get('/home',routes.home);
-//app.get('/license',routes.license);
-//app.get('/know',routes.know);
-//app.get('/user',routes.userInfo);
-//app.get('/single/:id', routes.singleQestion);
-//app.get('/new', routes.resource);
-
-app.post('/api/register',routes.registerApi);
-app.post('/api/login',routes.loginApi);
-app.post('/api/forum/addquestion', routes.addQuestion);
 
 
 

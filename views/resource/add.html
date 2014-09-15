@@ -1,0 +1,42 @@
+{% extends '../shared/layout.html' %}
+{% block content %}
+<div id="contents">
+<div class="clearfix">
+    <div class="source-add">
+        <form action="/resource/add" method="post" class="message">
+            <label>title</label>
+            <input type="text" name="title" placeholder="resource title">
+            <label>type</label>
+            <select name="type" id="">
+                <option value="ppt">ppt</option>
+                <option value="pdf">pdf</option>
+                <option value="text">text</option>
+            </select>
+            <label>path</label>
+            <input type="text" name="path" placeholder="file path"/>
+            <label>image path</label>
+            <input type="text" name="imagePath" placeholder="imagePath"/>
+            <label>content</label>
+            <div id="content" name="content">
+
+            </div>
+            <label></label>
+            <input type="submit" class="more" value="提交">
+        </form>
+    </div>
+</div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('#content').redactor({
+            buttons: ['bold', '|',
+                'image', 'file', 'link', 'horizontalrule', '|',
+                'alignleft', 'aligncenter', 'alignright'],
+            imageUpload: '/upload/image',
+            minHeight: 200,
+            plugins: ['fullscreen'],
+            autoresize: false
+        });
+    });
+</script>
+{% endblock %}

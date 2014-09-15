@@ -31,7 +31,7 @@ $(document).ready(function() {
     /* --------------------------------------------------------------------------- */
     /*  3.  home page
      /* --------------------------------------------------------------------------- */
-    $('.quiz-btn').click(function() {
+    $('#js-newques').click(function() {
         $('.mc').show();
         $('.quiz').show();
     });
@@ -57,7 +57,14 @@ $(document).ready(function() {
             userName: email,
             pwd: pwd
         }, function(data) {
-            console.log(data)
+            if(data.code === 0) {
+                $('.loginAndRegister').animate({
+                    height: 0
+                },function() {
+                    var node = '<li><a href="/user/signout">退出</a></li>';
+                    $('#header .navigation').append($(node));
+                })
+            }
         })
 
     });

@@ -26,7 +26,6 @@ img {
     position: relative; /* This protects the inner element from being blurred */
 }
 .clearfix {
-    width: 960px;
     margin: 0 auto;
 }
 .clearfix:after {
@@ -36,6 +35,12 @@ img {
     line-height:0;
     height:1%;
     visibility:hidden;
+}
+.l {
+    float: left;
+}
+.r {
+    float: right;
 }
 /*------------ Sprites ------------*/
 .more, .subscribe, input[type='submit'] {
@@ -122,6 +127,9 @@ img {
     background: #4e5944 url(../images/bg-header.jpg) repeat-x left bottom;
     padding: 40px 0 46px;
 }
+#header > div, #footer > div {
+    width: 960px;
+}
 /** logo **/
 .logo {
     float: left;
@@ -185,13 +193,7 @@ h1 {
     margin: 0 0 12px;
     text-transform: uppercase;
 }
-h2 {
-    color: #626262;
-    font: 19px/24px "Times New Roman", Times, serif;
-    letter-spacing: 2px;
-    margin: 0;
-    text-transform: uppercase;
-}
+
 p {
     color: #626262;
     font: 14px/24px Arial, Helvetica, sans-serif;

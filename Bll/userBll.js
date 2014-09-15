@@ -22,6 +22,24 @@
     return dbUser.login(user, cb);
   };
 
+
+  /*
+  	获取用户信息
+   */
+
+  exports.getUserInfo = function(id, cb) {
+    return dbUser.getUserInfo(id, cb);
+  };
+
+
+  /*
+      获取所有用户
+   */
+
+  exports.getAllUser = function(cb) {
+    return dbUser.getAllUser(cb);
+  };
+
 }).call(this);
 
 //# sourceMappingURL=userBll.js.map

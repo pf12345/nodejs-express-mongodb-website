@@ -1,54 +1,65 @@
-mongodb = require('./newDb');
-logger = require('../helper/logger');
+dbHelper = require('../helper/dbHelper')
+mongodb = dbHelper.newDb();
+mongojs = require('mongojs');
+ObjectId = mongojs.ObjectId;
 
 ###
     注册
 ###
 exports.register = (user, cb) ->
 	##存瑞Mongodb的文档
-	mongodb.open (err, db) ->
-		if err
-			cb new Error("数据库连接失败")
-			mongodb.close()
-		else
-			db.collection "userInfo", (err, collection) ->
-				if err
-					cb new Error("数据库连接userInfo失败")
+	dbHelper.connectDB "userInfo", cb, (collection) ->
+		collection.findOne user, (err, doc) ->
+			if doc
+				cb new Error("已经存在该用户")
+				mongodb.close()
+			else
+				collection.insert user, {
+					safe: true
+				}, (err, u) ->
+					if err
+						cb new Error("注册失败")
+					else
+						cb null, u
 					mongodb.close()
-				else
-					collection.findOne user, (err, doc) ->
-						if doc
-							cb new Error("已经存在该用户")
-							mongodb.close()
-						else
-							collection.insert user, {
-								safe: true
-							}, (err, u) ->
-								if err
-									cb new Error("注册失败")
-								else
-									cb null, u
-								mongodb.close()
 
 
 ###
     登录
 ###
 exports.login = (user, cb) ->
-	mongodb.open (err, db)->
-		if err
-			cb new Error("数据库连接失败")
+	dbHelper.connectDB "userInfo", cb, (collection) ->
+		collection.findOne user, (err, doc)->
 			mongodb.close()
-		else
-			db.collection "userInfo", (err, collection) ->
-				if err
-					cb new Error("数据库连接失败")
-					mongodb.close()
-				else
-					collection.findOne user, (err, doc)->
-						if err
-							cb new Error("登录失败")
-						else
-							cb null, doc
-						mongodb.close()
+			if err
+				cb new Error("登录失败")
+			else
+				cb null, doc
+
+###
+	获取用户信息
+###
+exports.getUserInfo = (id, cb) ->
+	dbHelper.connectDB "userInfo", cb, (collection) ->
+		collection.findOne { _id: ObjectId(id)},(err, user) ->
+			mongodb.close()
+			if err
+				cb new Error(err)
+			else
+				cb null, user
+
+
+###
+    获取所有用户
+###
+exports.getAllUser = (cb) ->
+	dbHelper.connectDB "userInfo", cb, (collection) ->
+		collection.find().limit(10).toArray (err, items) ->
+			mongodb.close()
+			if err
+				cb new Error(err)
+			else
+				cb null,items
+
+
 

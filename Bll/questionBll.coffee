@@ -1,5 +1,6 @@
 
-questionBll = require("../Dal/dbQuestion")
+questionBll = require("../Dal/dbQuestion");
+
 
 ###
     add question
@@ -12,7 +13,7 @@ exports.add = (info, cb) ->
 	inf =
 		title: info.title
 		content: info.content
-		userId: info.userId
+		user: info.user
 		viewNum: 0
 		resNum: 0
 		updateTime: new Date()

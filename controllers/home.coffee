@@ -1,6 +1,4 @@
 
-QUESTION = require('../node_modules/questionapi');
-
 ###
   index page
   localhost:8080

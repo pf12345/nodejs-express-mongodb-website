@@ -1,0 +1,219 @@
+{% extends '../shared/layout.html' %}
+{% block content %}
+<div id="contents">
+    <div class="clearfix">
+        <div class="container qa-container clearfix">
+            <div class="qa-left l">
+                <div class="qa-left-wrap">
+                    <div class="qa-breadcrumb">
+                        <a href="/wenda">全部问答</a> &gt; <a href="/wenda/3">活动建议</a>
+                    </div>
+                    <div class="qa-header">
+                        <a href="#" target="_blank" class="qa-author"><img
+                                src="{{question.user.avatar}}" width="40" height="40">
+                            {{question.user.name}}</a>
+                    </div>
+                    <div class="qa-content" data-qid="30394">
+                        <div class="qa-content-inner ">
+                            <div id="js-content-main">
+                                <h3 class="js-qa-wenda-title qa-wenda-title">{{question.title}}</h3>
+
+                                <div id="js-qa-wenda" class="qa-wenda imgPreview">
+                                    <p>{{question.content}}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="qa-content-addon clearfix">
+                            <span class="qa-createtime l">{{question.addTime}}</span>
+                            <span class="qa-view-num r">{{question.viewNum}} 浏览</span>
+                            <span class="qa-total-comment r">{{question.resNum}} 回答</span>
+                        </div>
+
+                    </div>
+                    <div class="qa-comments">
+
+                        <div class="qa-comment js-qa-comment" data-cid="21475">
+                            <div class="qa-comment-wrap clearfix ">
+                                <div class="qa-comment-author">
+                                    <a href="/space/u/uid/157005" title="觉悟人生T">
+                                        <img src="http://img.mukewang.com/user/538abd5a0001ea9701800180-40-40.jpg"
+                                             width="40"
+                                             height="40">
+                                        <span class="qa-comment-nick">觉悟人生T</span>
+                                    </a>
+                                </div>
+                                <div class="qa-comment-d">
+                                    <div class="qa-triangle-left"><i></i></div>
+                                    <div class="qa-comment-inner">
+                                        <div class="qa-comment-c imgPreview">
+                                            <div>
+                                                <p>
+                                                    【晒课】我学习了《javascritp入门篇》,《javascritp进阶篇》还有HTML等前端课程，感觉慕课网真心太赞了。要是参加培训班至少也在1W+可现在只要自己愿意抽时间来学习，就一定能够掌握最好的知识。自从有了慕课网，老板再也不用担心我的技能水平了~</p>
+                                            </div>
+                                        </div>
+                                        <div class="qa-comment-addon">
+                                            <span class="qa-comment-time">1天前</span>
+
+                                            <div class="qa-comment-addon-r">
+                        <span class="qa-total-reply js-qa-toggle-reply"><i class="qa-icon"></i><span
+                                class="js-qa-tr-num">0 条评论</span><span
+                                class="qa-tr-up js-qa-tr-up">收起评论<b><i></i></b></span></span>
+                        <span class="js-unlogin qa-comment-support  js-qacom-supported-user" data-ids="30394-21475"><i
+                                class="qa-icon"></i><span>2</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qa-reply">
+                                <div class="qa-reply-header"></div>
+                                <div class="qa-replies">
+                                    <div class="qa-reply-c">
+                                        <p class="qa-reply-loading">
+                                            加载中...
+                                        </p>
+                                    </div>
+                                    <div class="js-qa-reply-ibox qa-reply-ibox qa-reply-ibox-default clearfix">
+                                        <div class="qa-reply-iavator l">
+                                            <img src="http://img.mukewang.com/images/avatar_default.png" alt="">
+                                        </div>
+                                        <div class="qa-reply-iwrap">
+                                            <div class="qa-reply-iarea">
+                                                <textarea name="" class=" js-unlogin qa-reply-ipt-default placeholder"
+                                                          readonly=""
+                                                          placeholder="写下你的评论...">写下你的评论...</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="qa-comment js-qa-comment" data-cid="21490">
+                            <div class="qa-comment-wrap clearfix ">
+                                <div class="qa-comment-author">
+                                    <a href="/space/u/uid/306880" title="秦时明月">
+                                        <img src="http://img.mukewang.com/user/5413b3fa0001cceb09600800-40-40.jpg"
+                                             width="40"
+                                             height="40">
+                                        <span class="qa-comment-nick">秦时明月</span>
+                                    </a>
+                                </div>
+                                <div class="qa-comment-d">
+                                    <div class="qa-triangle-left"><i></i></div>
+                                    <div class="qa-comment-inner">
+                                        <div class="qa-comment-c imgPreview">
+                                            <div>
+                                                <p>【晒课】我学习了《PHP入门篇》</p>
+
+                                                <p>
+                                                    我刚开始接触了HTML5,CSS3，javascript.等到学完以后，本想开发一个网站，结果事实告诉我那些玩意只能制作一个静态网页自己一个人玩玩。然后我就想到了学习PHP，从图书馆借了一本PHP书，但是没有坚持几天我也就放弃了。后来在一次我们微机原理课上，老师说到了慕课网。我就以一种试试的心态打开了慕课网。然后就一发不可收拾了，总之，很喜欢慕课网的风格，哎，话题跑偏了，言归正传，等到学完这门课程以后，确实感觉自己进步了不少，特别感谢慕课网的老师们，其实更重要的是调动了我的学习积极性，我觉得我觉得这点是难得的。还有那个左边文字，右边可以编程的很有创意，经过练习和课后看书，觉得自己融会贯通了，进步了不少，谢谢慕课网提供给我们的这个平台，谢谢所有老师们的谆谆教诲，谢谢慕女神的不离不弃。嘿嘿。。。。。。</p>
+                                            </div>
+                                        </div>
+                                        <div class="qa-comment-addon">
+                                            <span class="qa-comment-time">1天前</span>
+
+                                            <div class="qa-comment-addon-r">
+                        <span class="qa-total-reply js-qa-toggle-reply"><i class="qa-icon"></i><span
+                                class="js-qa-tr-num">0 条评论</span><span
+                                class="qa-tr-up js-qa-tr-up">收起评论<b><i></i></b></span></span>
+                        <span class="js-unlogin qa-comment-support  js-qacom-supported-user" data-ids="30394-21490"><i
+                                class="qa-icon"></i><span>2</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qa-reply">
+                                <div class="qa-reply-header"></div>
+                                <div class="qa-replies">
+                                    <div class="qa-reply-c">
+                                        <p class="qa-reply-loading">
+                                            加载中...
+                                        </p>
+                                    </div>
+                                    <div class="js-qa-reply-ibox qa-reply-ibox qa-reply-ibox-default clearfix">
+                                        <div class="qa-reply-iavator l">
+                                            <img src="http://img.mukewang.com/images/avatar_default.png" alt="">
+                                        </div>
+                                        <div class="qa-reply-iwrap">
+                                            <div class="qa-reply-iarea">
+                                                <textarea name="" id=""
+                                                          class=" js-unlogin qa-reply-ipt-default placeholder"
+                                                          readonly=""
+                                                          placeholder="写下你的评论...">写下你的评论...</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="js-qa-comment-input" class="qa-comment-input js-msg-context clearfix">
+                        <div class="qa-ci-avator l">
+                            <a href="/space/u/uid/114357" title="pf12345"><img
+                                    src="http://img.mukewang.com/user/533e4c910001a72d02000200-40-40.jpg" width="40"
+                                    height="40"></a>
+                        </div>
+                        <div id="comment">
+
+                        </div>
+                        <br class="clear"/>
+
+                        <div id="js-qa-ci-footer" class="qa-ci-footer clearfix">
+                            <div class="qa-ci-footright r">
+                                <span class="qa-tips"></span>
+                                <button id="js-wenda-ci-submit" class="btn-mc btn-mc-green " data-qid="30394">回答
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qa-comment-page">
+                        <div class="page"><span class="disabled_page">首页</span><span class="disabled_page">上一页</span><a
+                                href="javascript:void(0)" class="active">1</a><a
+                                href="/wenda/detail/id/30394?page=2">2</a><a
+                                href="/wenda/detail/id/30394?page=3">3</a><a
+                                href="/wenda/detail/id/30394?page=4">4</a><a
+                                href="/wenda/detail/id/30394?page=5">5</a><a
+                                href="/wenda/detail/id/30394?page=6">6</a><a
+                                href="/wenda/detail/id/30394?page=2">下一页</a><a
+                                href="/wenda/detail/id/30394?page=6">尾页</a></div>
+                    </div>
+                </div>
+            </div>
+            {% include "../shared/wenda_right.html"%}
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#comment').redactor({
+            buttons: ['bold', '|',
+                'image', 'file', 'link', 'horizontalrule', '|',
+                'alignleft', 'aligncenter', 'alignright'],
+            imageUpload: '/upload/image',
+            minHeight: 200,
+            plugins: ['fullscreen'],
+            autoresize: false
+        });
+    });
+</script>
+<!--------------------------------- 提问弹出 -------------------------------->
+<div class="mc"></div>
+<div class="quiz">
+    <div>
+        <h1>提问</h1>
+
+        <form action="/question/add" method="post" class="message">
+            <input type="text" name="title" placeholder="写下你的问题">
+            <label>问题说明</label>
+            <textarea name="content"></textarea>
+            <input type="submit" class="more" value="提交">
+        </form>
+    </div>
+</div>
+{% endblock %}

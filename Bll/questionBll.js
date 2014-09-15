@@ -18,7 +18,7 @@
     inf = {
       title: info.title,
       content: info.content,
-      userId: info.userId,
+      user: info.user,
       viewNum: 0,
       resNum: 0,
       updateTime: new Date(),

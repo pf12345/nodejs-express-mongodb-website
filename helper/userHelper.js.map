@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "userHelper.js",
+  "sourceRoot": "",
+  "sources": [
+    "userHelper.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAEA;AAAA;;GAAA;AAAA;AAAA;AAAA,EAGA,OAAO,CAAC,OAAR,GAAkB,SAAC,GAAD,EAAM,GAAN,GAAA;AACjB,QAAA,OAAA;AAAA,IAAA,IAAG,GAAG,CAAC,OAAP;AACC,MAAA,OAAA,GAAa,GAAG,CAAC,OAAO,CAAC,MAAf,GAA2B,IAA3B,GAAqC,KAA/C,CAAA;AACA,aAAO,OAAP,CAFD;KAAA,MAAA;AAIC,aAAO,KAAP,CAJD;KADiB;EAAA,CAHlB,CAAA;AAAA"
+}

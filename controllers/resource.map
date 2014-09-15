@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "resource.js",
+  "sourceRoot": "",
+  "sources": [
+    "resource.coffee"
+  ],
+  "names": [],
+  "mappings": ";AACA;AAAA,EAAA,OAAO,CAAC,KAAR,GAAgB,SAAC,GAAD,EAAM,GAAN,GAAA;WACf,GAAG,CAAC,MAAJ,CAAW,OAAX,EACC;AAAA,MAAA,YAAA,EAAc,IAAd;KADD,EADe;EAAA,CAAhB,CAAA;AAAA"
+}

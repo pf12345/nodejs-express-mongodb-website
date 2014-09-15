@@ -1,71 +1,86 @@
 {% extends '../shared/layout.html' %}
 {% block content %}
-	<div id="contents">
-		<div class="clearfix">
-			<div class="sidebar">
-				<div>
-					<h2>Recent News</h2>
-					<p>
-						This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text.
-					</p>
-					<p>
-						You can remove any link to our website from this website template, you're free to use this website template without linking back to us.
-					</p>
-					<p>
-						If you're having problems editing this website template, then don't hesitate to ask for help on the Forums.
-					</p>
-				</div>
-				<div>
-					<h2>Client Testimonials</h2>
-					<p>
-						&ldquo;The best family lawyers in the city so far. Me and my ex-wife didn’t have any<br> problems settling the terms and agreement. Everything went so smoothly. We’re both very happy.&rdquo; <span>- Jared Greene</span>
-					</p>
-				</div>
-			</div>
-			<div class="main">
-				<h1>News</h1>
-				<ul class="news">
-					<li>
-						<div class="box">
-							<img src="images/bride-sideview.jpg" alt="Img" height="245" width="213">
-						</div>
-						<p class="info">
-							31st January 2023 by <span class="author">Manes Winchester</span>
-						</p>
-						<h2>The Basics of Marriage Laws</h2>
-						<p>
-							This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text.You can remove any link
-						</p>
-						<a href="singlepost.html" class="more">Read More</a>
-					</li>
-					<li>
-						<div class="box">
-							<img src="images/happy.jpg" alt="Img" height="245" width="213">
-						</div>
-						<p class="info">
-							31st January 2023 by <span class="author">Manes Winchester</span>
-						</p>
-						<h2>Happy Newly Divorced Women</h2>
-						<p>
-							This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text.You can remove any link
-						</p>
-						<a href="singlepost.html" class="more">Read More</a>
-					</li>
-					<li>
-						<div class="box">
-							<img src="images/children.jpg" alt="Img" height="245" width="213">
-						</div>
-						<p class="info">
-							31st January 2023 by <span class="author">Manes Winchester</span>
-						</p>
-						<h2>Children &amp; Divorced Parents</h2>
-						<p>
-							This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text.You can remove any link
-						</p>
-						<a href="singlepost.html" class="more">Read More</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-        {% endblock %}
+<div id="contents">
+    <div class="clearfix">
+        <div class="source-content">
+            <div class="source-tools">
+                <h2>全部资料</h2>
+                <ul class="js-tool-sort">
+                    <li><a class="curr" data-id="last" href="javascript:void(0)">最新</a></li>
+                    <!--<li><a href="javascript:void(0)" data-id="pop" class="">最热</a></li>-->
+                </ul>
+                <div class="dot-tool-curr" style="right: 80px;"></div>
+            </div>
+            <div class="source-list" style="margin-top: 0px;">
+                <div class="bg-loading" style="height: 2670px; display: none;"></div>
+                <div class="js-course-list">
+                    <ul>
+                        {% for item in items %}
+                        <li>
+                            <a href="/resource/{{item._id.toString()}}">
+                                <div class="course-list-img">
+                                    <img width="280" height="160" alt="{{item.title}}"
+                                         src="{{item.imagePath}}">
+                                </div>
+                                <h5><span class="topicon">{{item.title}}</span></h5>
+                                <div class="tips"><span class="l">{{item.addTime}}更新</span> <span class="r">{{item.viewNum}}人查看</span>
+                                </div>
+                            </a></li>
+                        {% endfor %}
+                        <li><a href="/view/18">
+                            <div class="course-list-img"><img width="280" height="160" alt="案例：焦点图轮播特效"
+                                                              src="http://img.mukewang.com/52b2cbd100017c4406000338-300-170.jpg">
+                            </div>
+                            <h5><span class="topicon">案例：焦点图轮播特效</span></h5>
+
+                            <div class="intro"><p>一种具有较强的视觉冲击力，网站内容非常常用的展现形式——焦点图轮播特效。</p><span class="l">更新至7-1</span>
+                                <span class="r">课程时长：1小时0分</span></div>
+                            <div class="tips"><span class="l">2014-04-30更新</span> <span class="r">1748人学习</span></div>
+                        </a></li>
+                        <li><a href="/view/32">
+                            <div class="course-list-img"><img width="280" height="160" alt="案例：用JS实现放大镜特效"
+                                                              src="http://img.mukewang.com/52e1d62300018f4f06000338-300-170.jpg">
+                            </div>
+                            <h5><span class="topicon">案例：用JS实现放大镜特效</span></h5>
+
+                            <div class="intro"><p>淘宝图片鼠标经过放大镜特效制作，让图片看起来更高档、更美观、更注细节。
+                            </p><span class="l">更新至6-1</span> <span class="r">课程时长：1小时0分</span></div>
+                            <div class="tips"><span class="l">2014-05-22更新</span> <span class="r">1377人学习</span></div>
+                        </a></li>
+                        <li><a href="/view/182">
+                            <div class="course-list-img"><img width="280" height="160" alt="案例：基于bootstrap的网页开发"
+                                                              src="http://img.mukewang.com/5400146600019dbb06000338-300-170.jpg">
+                            </div>
+                            <h5><span>案例：基于bootstrap的网页开发</span></h5>
+
+                            <div class="intro"><p>运用Bootstrap前端框架快速拾建网页，掌握它的 CSS、栅格系统、组件、插件和定制。</p><span class="l">更新至3-9</span>
+                                <span class="r">课程时长：1小时14分</span></div>
+                            <div class="tips"><span class="l">1天前更新</span> <span class="r">2205人学习</span></div>
+                        </a></li>
+                        <li><a href="/view/138">
+                            <div class="course-list-img"><img width="280" height="160" alt="案例：JS事件探秘"
+                                                              src="http://img.mukewang.com/53eafac3000109d006000338-300-170.jpg">
+                            </div>
+                            <h5><span>案例：JS事件探秘</span></h5>
+
+                            <div class="intro"><p>JS事件？他们究竟有多少不为人知的奥秘？让我们来一起探索吧！</p><span class="l">更新至5-1</span> <span
+                                    class="r">课程时长：2小时57分</span></div>
+                            <div class="tips"><span class="l">1天前更新</span> <span class="r">4103人学习</span></div>
+                        </a></li>
+                        <li><a href="/view/159">
+                            <div class="course-list-img"><img width="280" height="160" alt="系列：PS大神通关教程"
+                                                              src="http://img.mukewang.com/53d068840001a89906000338-300-170.jpg">
+                            </div>
+                            <h5><span>系列：PS大神通关教程</span></h5>
+
+                            <div class="intro"><p>一路的升级打怪，让你实现ps菜鸟到大神的炫酷逆袭。</p><span class="l">更新至3-22</span> <span
+                                    class="r">课程时长：8小时0分</span></div>
+                            <div class="tips"><span class="l">1天前更新</span> <span class="r">8115人学习</span></div>
+                        </a></li>
+                    </ul>
+                    <a href="javascript:void(0)" data-page="2" class="btn-next js-next">加载更多</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

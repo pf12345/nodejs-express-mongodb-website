@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="/css/custom.css"/>
     <link rel="stylesheet" href="/css/style.css"/>
     <script src="/js/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="/js/reactor/redactor.css"/>
+    <script src="/js/reactor/fullscreen.js"></script>
+    <script src="/js/reactor/redactor.js"></script>
     <script src="/js/common.js"></script>
 </head>
 <body>
@@ -17,11 +20,7 @@
             <div class="logo">
                 <a href="/"><img src="/images/logo.png" alt="LOGO" height="52" width="362"></a>
             </div>
-            <div class="login">
-                <input type="text" placeholder="用户名、邮箱地址"/>
-                <input type="password" placeholder="密码"/>
-                <input type="button" placeholder="登录" value="登录"/>
-            </div>
+
             <ul class="navigation">
                 <li {% if loopIndex %} class="active"{% endif %}>
                     <a href="/">首页</a>
@@ -32,11 +31,27 @@
                 <li {% if loopResource %} class="active"{% endif %}>
                     <a href="/resource">资料库</a>
                 </li>
+                {% if isLogin %}
+                <li>
+                    <a href="/user/signout">退出</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </div>
     <!---------- header end ----->
-
+    {% if !isLogin %}
+    <div class="loginAndRegister">
+        <div>
+            <div class="login">
+                <input type="text" placeholder="用户名、邮箱地址"/>
+                <input type="password" placeholder="密码"/>
+                <input type="button" placeholder="登录" value="登录"/>
+            </div>
+            <span>没有账号<a href="/user/register">马上注册</a></span>
+        </div>
+    </div>
+    {% endif %}
     {% block content %}{% endblock %}
 
     <!-- Footer -->
