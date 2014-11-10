@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>carSchool</title>
+    <title>助车</title>
     <meta charset="utf-8"/>
+    <meta name="keywords" content="车，驾校，科目二，科目一，科目三，汽车，考证，驾驶，助车网"/>
+    <meta name="description" content="助车网，一个关于汽车、驾校、考证的提问回答社区，力求为所有汽车拥有者，驾照考试者提供帮助"/>
+    <meta name="baidu-site-verification" content="u3jDglCKyo" />
     <link rel="stylesheet" href="/css/custom.css"/>
     <link rel="stylesheet" href="/css/style.css"/>
     <script src="/js/jquery-1.7.2.min.js"></script>
     <link rel="stylesheet" href="/js/reactor/redactor.css"/>
+    <link rel="icon" href="/images/icon/chetan.ico"/>
     <script src="/js/reactor/fullscreen.js"></script>
     <script src="/js/reactor/redactor.js"></script>
     <script src="/js/common.js"></script>
+
 </head>
 <body>
+<div style="display:none">
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8ef3eaa0e488ee0c2663ca2565dda5e7' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
 <div id="showMsg"></div>
 <div id="body-wrapper">
     <!---------- header -------->
     <div id="header">
         <div class="clearfix">
             <div class="logo">
-                <a href="/"><img src="/images/logo.png" alt="LOGO" height="52" width="362"></a>
+                <a href="/"><h1>车谈</h1></a>
             </div>
 
             <ul class="navigation">
-                <li {% if loopIndex %} class="active"{% endif %}>
-                    <a href="/">首页</a>
+                <li
+                {% if loopIndex %} class="active"{% endif %}>
+                <a href="/">问题</a>
                 </li>
-                <li {% if loopExplore %} class="active"{% endif %}>
-                    <a href="/explore">发现</a>
-                </li>
-                <li {% if loopResource %} class="active"{% endif %}>
-                    <a href="/resource">资料库</a>
+                <li
+                {% if loopResource %} class="active"{% endif %}>
+                <a href="/resource">资料库</a>
                 </li>
                 {% if isLogin %}
                 <li>
-                    <a href="/user/signout">退出</a>
+                    <a href="/user/{{isLogin}}">用户中心</a>
                 </li>
                 {% endif %}
             </ul>
@@ -44,47 +54,14 @@
     <div class="loginAndRegister">
         <div>
             <div class="login">
-                <input type="text" placeholder="用户名、邮箱地址"/>
+                <input type="text" placeholder="邮箱地址"/>
                 <input type="password" placeholder="密码"/>
                 <input type="button" placeholder="登录" value="登录"/>
             </div>
-            <span>没有账号<a href="/user/register">马上注册</a></span>
+            <span>没有账号，<a href="/user/register">马上注册</a></span>
         </div>
     </div>
     {% endif %}
     {% block content %}{% endblock %}
-
-    <!-- Footer -->
-    <div id="footer">
-        <div class="clearfix">
-            <div class="section">
-                <h4>Latest News</h4>
-                <p>
-                    This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. You can remove any link.
-                </p>
-            </div>
-            <div class="section contact">
-                <h4>Contact Us</h4>
-                <p>
-                    <span>Address:</span> the address city, state 1111
-                </p>
-                <p>
-                    <span>Phone:</span> (+20) 000 222 999
-                </p>
-                <p>
-                    <span>Email:</span> info@freewebsitetemplates.com
-                </p>
-            </div>
-            <div class="section">
-                <h4>SEND US A MESSAGE</h4>
-                <p>
-                    If you're having problems editing this website template, then don't hesitate to ask for help on the Forums.
-                </p>
-                <a href="http://www.freewebsitetemplates.com/misc/contact/" class="subscribe">Click to send us an email</a>
-            </div>
-        </div>
-    <!-- /Footer -->
-
-</div>
 </body>
 </html>

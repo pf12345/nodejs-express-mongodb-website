@@ -2,27 +2,164 @@
 {% block content %}
 <div id="contents">
     <div class="clearfix">
-        <div class="sidebar">
-            <div>
-                <h2>相关问题</h2>
-                {% for item in items %}
-                <p>
-                    <a href="/single/{{item._id.toString()}}">{{item.title}}</a>
-                </p>
-                {% endfor %}
+        <div class="container qa-container clearfix">
+            <div class="qa-left l">
+                <div class="qa-left-wrap">
+                    <div class="qa-breadcrumb">
+                        <a>全部问答</a> &gt; <a>活动建议</a>
+                    </div>
+                    <div class="qa-header">
+                        <a href="/user/{{question.user.id}}" class="qa-author"><img
+                                src="{{question.user.avatar}}" width="40" height="40">
+                            {{question.user.name}}</a>
+                    </div>
+                    <div class="qa-content" data-qid="30394">
+                        <div class="qa-content-inner ">
+                            <div id="js-content-main">
+                                <input type="hidden" name="id" id="qId" value="{{question._id.toString()}}"/>
+
+                                <h3 class="js-qa-wenda-title qa-wenda-title">{{question.title}}</h3>
+
+                                <div id="js-qa-wenda" class="qa-wenda imgPreview">
+                                    <p>{{question.content}}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="qa-content-addon clearfix">
+                            <span class="qa-createtime l">{{question.addTime}}</span>
+                            <span class="qa-view-num r">{{question.viewNum}} 浏览</span>
+                            <span class="qa-total-comment r">{{question.resNum}} 回答</span>
+                        </div>
+
+                    </div>
+                    <div class="qa-comments">
+                        {% for comment in comments%}
+                        <div class="qa-comment js-qa-comment" data-cid="21475">
+                            <div class="qa-comment-wrap clearfix ">
+                                <div class="qa-comment-author">
+                                    <a href="/user/{{comment.user.id}}" title="{{comment.user.name}}">
+                                        <img src="{{comment.user.avatar}}"
+                                             width="40"
+                                             height="40">
+                                        <span class="qa-comment-nick">{{comment.user.name}}</span>
+                                    </a>
+                                </div>
+                                <div class="qa-comment-d">
+                                    <div class="qa-triangle-left"><i></i></div>
+                                    <div class="qa-comment-inner">
+                                        <div class="qa-comment-c imgPreview">
+                                            <input type="hidden" name="commentId" class="commentId"
+                                                   value="{{comment._id.toString()}}"/>
+                                            <div>
+                                                {% autoescape false %}{{comment.content}}{% endautoescape %}
+                                            </div>
+                                        </div>
+                                        <div class="qa-comment-addon">
+                                            <span class="qa-comment-time">{{comment.addTime}}</span>
+
+                                            <div class="qa-comment-addon-r">
+                        <span class="qa-total-reply js-qa-toggle-reply"><i class="qa-icon"></i><span
+                                class="js-qa-tr-num">{{comment.replyNum}} 条评论</span><span
+                                class="qa-tr-up js-qa-tr-up">收起评论<b><i></i></b></span></span>
+                        <span class="js-unlogin qa-comment-support  js-qacom-supported-user" data-ids="30394-21475"><i
+                                class="qa-icon"></i><span class="qa-like">{{comment.likeNum}} 个赞</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qa-reply">
+                                <div class="qa-reply-header"></div>
+                                <div class="qa-replies">
+                                    <div class="qa-reply-c">
+                                    </div>
+                                    <div class="js-qa-reply-ibox qa-reply-ibox clearfix">
+                                        <div class="qa-reply-iavator l">
+                                            <a href="/user/{{currentUser.id}}" title="{{currentUser.name}}">
+                                                <img src="{{currentUser.avatar}}" width="40" height="40">
+                                            </a>
+                                        </div>
+                                        <div class="qa-reply-iwrap">
+                                            <div class="qa-reply-iarea">
+                                                <textarea maxlength="2000" name="" class="js-reply-ipt" placeholder="写下你的评论..." style="overflow: hidden; word-wrap: break-word; height: 40px;"></textarea>
+                                            </div>
+                                            <div class="qa-reply-ifoot clearfix">
+                                                <div class="qa-reply-footright r">
+                                                    <span class="qa-tips"></span>
+                                                    <button class="btn-mc-light js-ipt-cancel">取消</button>
+                                                    <button class="btn-mc btn-mini btn-mc-green js-ipt-submit">提交</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div id="js-qa-comment-input" class="qa-comment-input js-msg-context clearfix">
+                        <div class="qa-ci-avator l">
+                            <a href="/user/{{currentUser.id}}" title="{{currentUser.name}}"><img
+                                    src="{{currentUser.avatar}}" width="40"
+                                    height="40"></a>
+                        </div>
+                        <div id="comment">
+
+                        </div>
+                        <br class="clear"/>
+
+                        <div id="js-qa-ci-footer" class="qa-ci-footer clearfix">
+                            <div class="qa-ci-footright r">
+                                <span class="qa-tips"></span>
+                                <button id="js-wenda-ci-submit" class="btn-mc btn-mc-green " data-qid="30394">回答
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<div class="qa-comment-page">-->
+                        <!--<div class="page"><span class="disabled_page">首页</span><span class="disabled_page">上一页</span><a-->
+                                <!--href="javascript:void(0)" class="active">1</a><a-->
+                                <!--href="/wenda/detail/id/30394?page=2">2</a><a-->
+                                <!--href="/wenda/detail/id/30394?page=3">3</a><a-->
+                                <!--href="/wenda/detail/id/30394?page=4">4</a><a-->
+                                <!--href="/wenda/detail/id/30394?page=5">5</a><a-->
+                                <!--href="/wenda/detail/id/30394?page=6">6</a><a-->
+                                <!--href="/wenda/detail/id/30394?page=2">下一页</a><a-->
+                                <!--href="/wenda/detail/id/30394?page=6">尾页</a></div>-->
+                    <!--</div>-->
+                </div>
             </div>
-        </div>
-        <div class="main">
-            <div class="details">
-                <p class="info">
-                    {{question.addTime.toDateString()}} by <span class="author">Manes Winchester</span>
-                </p>
-                <h2>{{question.title}}</h2>
-                <p>
-                     {{question.content}}
-                </p>
-            </div>
+            {% include "../shared/wenda_right.html"%}
         </div>
     </div>
 </div>
-    {% endblock %}
+<script>
+    $(document).ready(function () {
+        $('#comment').redactor({
+            buttons: ['bold', '|',
+                'image', 'file', 'link', 'horizontalrule', '|',
+                'alignleft', 'aligncenter', 'alignright'],
+            imageUpload: '/upload/image',
+            minHeight: 200,
+            plugins: ['fullscreen'],
+            autoresize: false
+        });
+    });
+</script>
+<!--------------------------------- 提问弹出 -------------------------------->
+<div class="mc"></div>
+<div class="quiz">
+    <div>
+        <h1>提问</h1>
+
+        <form action="/question/add" method="post" class="message">
+            <input type="text" name="title" placeholder="写下你的问题">
+            <label>问题说明</label>
+            <textarea name="content"></textarea>
+            <input type="submit" class="more" value="提交">
+        </form>
+    </div>
+</div>
+{% endblock %}

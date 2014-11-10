@@ -1,7 +1,7 @@
-
 questionBll = require("../Bll/questionBll")
 userBll = require("../Bll/userBll")
 userHelper = require("../helper/userHelper");
+commentsBll = require("../Bll/commentsBll")
 moment = require("moment");
 moment.lang("zh-cn");
 
@@ -22,19 +22,18 @@ exports.add_POST = (req, res) ->
 	info =
 		title: req.body.title
 		content: req.body.content
-		user:
-			id: req.session.userId || 0
-			email: req.session.userEmail || ''
-			name: req.session.userName || '游客'
-			avatar: req.session.userAvatar || 'http://img.mukewang.com/user/53b6219500010ef010001000-40-40.jpg'
-
+		user: userHelper.getUserInfo(req)
 	questionBll.add info, (err,question) ->
 		if err
 			res.send
 				code: 1
 				message: err.message
 		else
-			res.redirect '/single/'+question[0]._id.toString()
+			if req.session.userId
+				userBll.changeAnsNum req.session.userId, (err) ->
+					if err
+						console.log(err)
+					res.redirect '/single/'+question[0]._id.toString()
 
 
 ###
@@ -66,11 +65,29 @@ exports.single = (req, res) ->
 								code: 1
 								message: err.message
 						else
-							res.render "single1",
-								question: question
-								items: items
-								users: users
-								isLogin: userHelper.isLogin(req, res)
+							commentsBll.getAll id,(err, comments) ->
+								if err
+									res.send
+										code: 1
+										message: err.message
+								else
+									if comments
+										comments.map (comment) ->
+											comment.addTime = moment(comment.addTime).fromNow()
+									questionBll.changeViewNum id, (err) ->
+										if err
+											res.send
+												code: 1
+												message: err.message
+										else
+											res.render "single",
+												question: question
+												items: items
+												users: users
+												currentUser: userHelper.getUserInfo(req)
+												comments:comments
+												isLogin: userHelper.isLogin(req, res)
+
 
 ###
     获取所有问题

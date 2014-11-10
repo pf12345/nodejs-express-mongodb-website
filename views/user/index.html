@@ -1,0 +1,133 @@
+{% extends '../shared/layout.html' %}
+{% block content %}
+<div id="contents" class="user">
+    <div class="clearfix">
+        <div class="wenda clearfix">
+            <div class="fl wenda-main">
+                <div class="newpost">
+                    <a href="javascript:void 0" id="user-question" class="quealltab  onactive">提问</a>
+                    <a href="javascript:void 0" id="user-answer" class="quealltab ">回答</a>
+                </div>
+                <!--左侧列表内容-->
+                <div class="wenda-list">
+                    <div class="question">
+                        {% if questions.length === 0 %}
+                        <p style="margin: 25px">
+                            没有提问，<a href="/">提出问题</a>
+                        </p>
+                        {% endif %}
+                        {% for question in questions %}
+                        <div class="wenda-listcon clearfix">
+                            <div class="wendaslider fl">
+
+                                <h2 class="wendaquetitle">
+
+                                    <div class="wendatitlecon">
+                                        <a href="/single/{{question._id.toString()}}" target="_blank" class="wendatitle">{{question.title}}</a>
+                                    </div>
+                                </h2>
+                                <div class="replycont clearfix">
+
+                                    <div class="fl replydes">
+                                        <span class="replydet">{{question.content}}</span>
+                                    </div>
+                                </div>
+                                <div class="replymegfooter">
+                                    <div class="wenda-time">
+                                        <em>提问时间：{{question.addTime}}</em>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="answer" style="display: none">
+                        {% if ansQuestions.length === 0 %}
+                        <p style="margin: 25px;">
+                            没有回答问题，<a href="/">开始回答</a>
+                        </p>
+
+                        {% endif %}
+                        {% for question in ansQuestions %}
+                        <div class="wenda-listcon clearfix">
+                            <div class="wendaslider fl">
+
+                                <h2 class="wendaquetitle">
+
+                                    <div class="wendatitlecon">
+                                        <a href="/single/{{question._id.toString()}}" target="_blank" class="wendatitle">{{question.title}}</a>
+                                    </div>
+                                </h2>
+                                <div class="replycont clearfix">
+
+                                    <div class="fl replydes">
+                                        <span class="replydet">{{question.content}}</span>
+                                    </div>
+                                </div>
+                                <div class="replymegfooter">
+                                    <div class="wenda-time">
+                                        <em>提问时间：{{question.addTime}}</em>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+
+
+                    <!--<div class="page"><span class="disabled_page">首页</span><span class="disabled_page">上一页</span><a-->
+                    <!--href="javascript:void(0)" class="active">1</a><a href="/wenda/0/1/2">2</a><a-->
+                    <!--href="/wenda/0/1/3">3</a><a-->
+                    <!--href="/wenda/0/1/4">4</a><a href="/wenda/0/1/5">5</a><a href="/wenda/0/1/6">6</a><a-->
+                    <!--href="/wenda/0/1/7">7</a><a-->
+                    <!--href="/wenda/0/1/2">下一页</a><a href="/wenda/0/1/482">尾页</a>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="fr wenda-slider">
+                <div class="r">
+                    <img src="{{user.avatar}}" width="220" height="220" alt=""/>
+                </div>
+                <div class="info">
+                    <h4>{{user.name}} <a class="user-login-out" href="/user/signOut">退出</a></h4>
+                    <p>说点什么</p>
+                </div>
+                <div class="wenda-mkclass">
+                    <h2>最近访问</h2>
+
+                    <div class="wenda-mkclasscon clearfix">
+                        <ul>
+                            {% for user in users %}
+                            <li>
+                                <a href="#" class="fl roll-head" target="_blank" title="{{user.name}}"><img
+                                        src="{{user.avatar}}" width="40"
+                                        height="40"></a>
+                                <a href="/user/{{user.id}}" target="_blank" title="{{user.name}}" class="rankingnickname">{{user.name}}</a>
+                                <i class="adopt rankingnum">{{user.viewNum || 0}}<br><i class="smallfont">回答</i></i>
+                            </li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--------------------------------- 提问弹出 -------------------------------->
+<div class="mc"></div>
+<div class="quiz">
+    <div>
+        <h1>提问</h1>
+
+        <form action="/question/add" method="post" class="message">
+            <input type="text" name="title" placeholder="写下你的问题">
+            <label>问题说明</label>
+            <textarea name="content"></textarea>
+            <input type="submit" class="more" value="提交">
+        </form>
+    </div>
+</div>
+{% endblock %}

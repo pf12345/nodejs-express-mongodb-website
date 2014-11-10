@@ -24,7 +24,7 @@ exports.index = (req, res) ->
 						code: 1
 						message: err.message
 				else
-					res.render "index1",
+					res.render "index",
 						loopExplore: true
 						items: items
 						users: users

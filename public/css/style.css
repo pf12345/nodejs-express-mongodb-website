@@ -8,79 +8,164 @@
 /*  0.  Reset & Clearfix (http://meyerweb.com/eric/tools/css/reset/)
 /* ------------------------------------------------------------------------------- */
 
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,and,
-address,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,
-b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,
-th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,
-nav,output,ruby,section,summary,time,mark,audio,video,input,textarea,select
-{background:transparent;border:0;font-size:100%;margin:0;outline:0;padding:0;vertical-align:baseline}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, and,
+address, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr,
+th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu,
+nav, output, ruby, section, summary, time, mark, audio, video, input, textarea, select {
+    background: transparent;
+    border: 0;
+    font-size: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline
+}
 
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block
+}
 
-body{line-height:1}
+body {
+    line-height: 1
+}
 
-abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help
+}
 
-blockquote,q{quotes:none}
+blockquote, q {
+    quotes: none
+}
 
-blockquote:before,blockquote:after,q:before,q:after{content:none}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: none
+}
 
-del{text-decoration:line-through}
+del {
+    text-decoration: line-through
+}
 
-hr{background:transparent;border:0;clear:both;color:transparent;height:1px;margin:0;padding:0}
+hr {
+    background: transparent;
+    border: 0;
+    clear: both;
+    color: transparent;
+    height: 1px;
+    margin: 0;
+    padding: 0
+}
 
-mark{background-color:#ffffb3;font-style:italic}
+mark {
+    background-color: #ffffb3;
+    font-style: italic
+}
 
-input,select{vertical-align:middle}
-address, caption, cite, code, dfn, em, strong, th, var, optgroup {font-style: normal;font-weight: normal;}
-ins{background-color:red;color:white;text-decoration:none}
-:link, :visited{ text-decoration: none; }
-ol,ul{list-style:none}
-a:link, a:visited{ color: #5e5e5e;}
-a:hover { color:#c9394a;}
-a:active { color: #666;}
+input, select {
+    vertical-align: middle
+}
 
-table{border-collapse:collapse;border-spacing:0}
+address, caption, cite, code, dfn, em, strong, th, var, optgroup {
+    font-style: normal;
+    font-weight: normal;
+}
 
-.clear{clear:both;display:block;height:0;overflow:hidden;visibility:hidden;width:0;margin: 0}
+ins {
+    background-color: red;
+    color: white;
+    text-decoration: none
+}
 
-.clearfix:after{clear:both;content:' ';display:block;font-size:0;height:0;line-height:0;
-    visibility:hidden;width:0}
+:link, :visited {
+    text-decoration: none;
+}
 
-* html .clearfix,:first-child+html .clearfix{zoom:1}
+ol, ul {
+    list-style: none
+}
 
-.float-left{
+a:link, a:visited {
+    color: #5e5e5e;
+}
+
+a:hover {
+    color: #c9394a;
+}
+
+a:active {
+    color: #666;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+.clear {
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    margin: 0
+}
+
+.clearfix:after {
+    clear: both;
+    content: ' ';
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    width: 0
+}
+
+* html .clearfix, :first-child + html .clearfix {
+    zoom: 1
+}
+
+.float-left {
     float: left;
 }
 
-.float-right{
+.float-right {
     float: right;
 }
 
-.circle{
+.circle {
     border-radius: 50%;
 }
 
-input[type=button] {
+input[type=button], button, input[type=submit] {
     cursor: pointer;
+    border: none;
 }
 
 .fl {
     float: left;
 }
+
 .fr {
     float: right;
 }
+
 #contents > .clearfix > div {
     padding-bottom: 60px;
 }
+
 /* ------------------------------------------------------------------------------- */
 /*  1.  Document Setup
 /* ------------------------------------------------------------------------------- */
 
-html { overflow-x: hidden; }
+html {
+    overflow-x: hidden;
+}
+
 body {
-    background:#eef3fa;
+    background: #eef3fa;
     color: #5d5d5d;
     font: 11px/1.7 'Open Sans', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
     overflow-y: auto;
@@ -88,17 +173,37 @@ body {
     -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
     -webkit-text-size-adjust: 100%;
 }
+
 a:hover {
     color: #c9394a;
     cursor: pointer;
 }
 
-h1 { font-size: 30px; }
-h2 { font-size: 24px; }
-h3 { font-size: 18px; font-weight: 400; }
-h4 { font-size: 16px; font-weight: 400; }
-h5 { font-size: 12px; }
-h6 { font-size: 11px; }
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+h5 {
+    font-size: 12px;
+}
+
+h6 {
+    font-size: 11px;
+}
 
 .btn-mc {
     display: inline-block;
@@ -127,15 +232,41 @@ h6 { font-size: 11px; }
     background-color: #61c771;
 }
 
+.btn-mc-light {
+    background-color: #fff;
+    border: 1px solid #fff;
+    display: inline-block;
+    vertical-align: middle;
+    height: 29px;
+    padding: 0 15px;
+    text-align: center;
+    border-radius: 1px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #99a1a6;
+    transition: border-color 0.25s;
+    -webkit-transition: border-color 0.25s;
+    -moz-transition: border-color 0.25s;
+    -o-transition: border-color 0.25s;
+}
 
+.btn-mc-light:hover {
+    border-color: #ccc;
+}
+
+.btn-mini {
+    height: 29px;
+    line-height: 29px;
+    padding: 0 15px;
+}
 
 /*  Forms  --------------------------------*/
 
-.redText{
-    color:#d73300
+.redText {
+    color: #d73300
 }
 
-#showMsg{
+#showMsg {
     min-width: 100px;
     text-align: center;
     height: 30px;
@@ -149,7 +280,7 @@ h6 { font-size: 11px; }
     z-index: 255;
     display: none;
     line-height: 30px;
-    padding:0px 20px;
+    padding: 0px 20px;
 }
 
 .ys, .browsenum {
@@ -165,7 +296,7 @@ h6 { font-size: 11px; }
 /*  2. index
 /* ------------------------------------------------------------------------------- */
 
-#index-top{
+#index-top {
     height: 300px;
     width: 100%;
     background-color: #54728c;
@@ -173,50 +304,60 @@ h6 { font-size: 11px; }
     padding-top: 50px;
 }
 
-#index-top *{
+#index-top * {
     color: #fff;
 }
 
-#index-top>div{
+#index-top > div {
     margin-left: 115px;
     width: 307px;
 }
 
-.index-top-left{
+.index-top-left {
     margin-top: 30px;
 }
-.index-top-left h3{
+
+.index-top-left h3 {
     text-indent: 2em;
 }
-#index-top .index-top-right{
+
+#index-top .index-top-right {
     margin-right: 115px;
     width: 221px;
 }
-#index-top input[type=button]{
+
+#index-top input[type=button] {
     width: 220px;
     font-size: 18px;
     letter-spacing: 4px;
 }
-.index-top-right h3{
+
+.index-top-right h3 {
     cursor: pointer;
 }
-#index-bottom{
+
+#index-bottom {
     background-color: #fff;
-    padding:40px 115px;
+    padding: 40px 115px;
 }
-#index-bottom ul li{
+
+#index-bottom ul li {
     padding: 6px 0;
 }
-#index-bottom img{
+
+#index-bottom img {
     margin-right: 15px;
 }
-#index-bottom>div{
+
+#index-bottom > div {
     width: 300px;
 }
-#index-bottom p{
+
+#index-bottom p {
     margin-left: 45px;
 }
-#index-login{
+
+#index-login {
     display: none;
 }
 
@@ -232,6 +373,7 @@ h6 { font-size: 11px; }
 .index-answer {
     margin-left: 44px;
 }
+
 /* ------------------------------------------------------------------------------- */
 /*  2. explore
 /* ------------------------------------------------------------------------------- */
@@ -243,25 +385,39 @@ h6 { font-size: 11px; }
 .explore .section {
     background: none;
 }
+
 .mc {
     position: fixed;
     height: 100vh;
     width: 100vw;
-    background: rgba(0,0,0,.5);
+    background: rgba(0, 0, 0, .5);
     top: 0;
     left: 0;
     display: none;
+    opacity: 0;
+    filter: alpha(opacity = 0);
 }
+
+.animate {
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+
 .quiz {
     position: absolute;
-    top: 100px;
+    top: 120px;
     left: 50%;
     margin-left: -250px;
     z-index: 99;
     background: #fff;
-    padding:0 0 40px;
+    padding: 0 0 40px;
     width: 500px;
     display: none;
+    opacity: 0;
+    filter: alpha(opacity = 0);
 }
 
 .quiz form {
@@ -274,9 +430,19 @@ h6 { font-size: 11px; }
     background: #e2e2e2;
     padding: 6px 20px;
 }
+
 .quiz input[type=text], .message textarea {
     border: 1px solid #e2e2e2;
     padding: 5px 10px;
+}
+
+.quiz .close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 30px;
+    color: #000;
+    cursor: pointer;
 }
 
 /* ------------------------------------------------------------------------------- */
@@ -357,7 +523,6 @@ h6 { font-size: 11px; }
     border: 1px solid #528641;
 }
 
-
 /* ------------------------------------------------------------------------------- */
 /*  5. source
 /* ------------------------------------------------------------------------------- */
@@ -390,18 +555,21 @@ h6 { font-size: 11px; }
     right: 20px;
     top: 16px;
 }
+
 .source-tools ul li {
     float: left;
     width: 60px;
     font-size: 12px;
     text-align: center;
 }
+
 .source-tools ul li a {
     color: #b4bbbf;
     display: block;
     border-left: 1px solid #edf0f2;
     line-height: 20px;
 }
+
 .source-tools .dot-tool-curr {
     position: absolute;
     width: 60px;
@@ -410,6 +578,7 @@ h6 { font-size: 11px; }
     top: 48px;
     background: #7e878c;
 }
+
 .source-list {
     padding: 20px 10px;
     overflow: hidden;
@@ -440,10 +609,11 @@ h6 { font-size: 11px; }
     line-height: 48px;
     text-align: center;
 }
+
 .source-list li {
     background: #fff;
-    background: #f7faf9\0/;
-    border-bottom: 2px solid #f7faf9\0/;
+    background: #f7faf9 \0/;
+    border-bottom: 2px solid #f7faf9 \0/;
     border-radius: 0 0 1px 1px;
     float: left;
     margin: 5px 10px 15px;
@@ -463,10 +633,12 @@ h6 { font-size: 11px; }
     overflow: hidden;
     position: relative;
 }
+
 .source-list li:hover img, .source-list li.hover img {
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
 }
+
 .source-list li .course-list-img img {
     display: block;
     transition: 1s;
@@ -495,8 +667,8 @@ h6 { font-size: 11px; }
     left: 0;
     width: 252px;
     background: #fff;
-    background: #f7faf9\0/;
-    display: none\0/;
+    background: #f7faf9 \0/;
+    display: none \0/;
     font-size: 12px;
     transition: .3s;
     -moz-transition: .3s;
@@ -513,12 +685,12 @@ h6 { font-size: 11px; }
 .source-list li .intro span {
     color: #b4bbbf;
 }
+
 .source-list li .tips {
     padding: 0 14px;
     font-size: 12px;
     color: #b4bbbf;
 }
-
 
 .wenda {
     width: 1000px;
@@ -527,7 +699,6 @@ h6 { font-size: 11px; }
     overflow: hidden;
 }
 
-
 /* ------------------------------------------------------------------------------- */
 /*  5. source
 /* ------------------------------------------------------------------------------- */
@@ -535,12 +706,14 @@ h6 { font-size: 11px; }
     width: 720px;
     padding: 0 0 20px 0;
 }
+
 .wenda-slider {
     width: 259px;
     padding: 0 10px 2000px 10px;
     margin-bottom: -2000px;
     border-left: 1px solid #e3e5e5;
 }
+
 .wenda-slider .newques-btn {
     display: inline-block;
     width: 230px;
@@ -551,9 +724,10 @@ h6 { font-size: 11px; }
     text-align: center;
     font-size: 14px;
     line-height: 46px;
-    margin: 30px 0  0 15px;
+    margin: 30px 0 0 15px;
     position: relative;
 }
+
 .wenda-slider .newques-btn i {
     font-style: normal;
     background: url(/images/wendanew.png) no-repeat 0 -84px;
@@ -563,19 +737,23 @@ h6 { font-size: 11px; }
     vertical-align: middle;
     display: inline-block;
 }
+
 .wenda-slider .newques-btn:hover {
     background: #2ea7e0;
     border-bottom: 4px solid #2586b3;
     color: #fff;
 }
+
 .wenda-slider .newques-btn:hover i {
     background: url(/images/bbs.png) no-repeat 0 -37px;
 }
+
 .wenda-tab {
     height: 60px;
     border-bottom: 1px solid #f2d7da;
     overflow: hidden;
 }
+
 .wenda-tab li {
     float: left;
     overflow: hidden;
@@ -583,23 +761,28 @@ h6 { font-size: 11px; }
     color: #363d40;
     text-align: center;
 }
+
 .wenda-tab li a {
     display: block;
     color: #363d40;
     line-height: 57px;
 }
+
 .wenda-tab li .active {
     color: #be3948;
     border-bottom: 4px solid #be3948;
     line-height: 57px;
 }
+
 .wenda-tab li a:hover {
     color: #be3948;
 }
+
 .newpost {
     height: 39px;
     border-bottom: 1px solid #e3e5e5;
 }
+
 .newpost .quealltab {
     float: left;
     font-size: 12px;
@@ -608,6 +791,7 @@ h6 { font-size: 11px; }
     line-height: 38px;
     color: #99a1a6;
 }
+
 .newpost .searchtab {
     float: left;
     font-size: 12px;
@@ -615,25 +799,30 @@ h6 { font-size: 11px; }
     line-height: 38px;
     text-align: center;
 }
+
 .newpost .searchtab:hover,
 .newpost .onactive {
     color: #363d40;
     border-bottom: 2px solid #99a1a6;
     line-height: 38px;
 }
+
 .newpost .quealltab:hover {
     color: #363d40;
 }
+
 .wenda-listcon {
     padding: 10px 0;
     border-bottom: 1px solid #e3e5e5;
     overflow: hidden;
 }
+
 .wenda-listcon .headslider {
     width: 105px;
     overflow: hidden;
     text-align: center;
 }
+
 .wenda-listcon .headslider .wenda-head,
 .wenda-listcon .headslider .wenda-nickname {
     display: block;
@@ -643,15 +832,18 @@ h6 { font-size: 11px; }
     font-size: 12px;
     vertical-align: middle;
 }
+
 .wenda-listcon .headslider .wenda-nickname {
     padding: 0 10px;
     word-wrap: break-word;
     word-break: break-all;
 }
+
 .wenda-listcon .headslider .wenda-nickname:hover {
     color: #be3948;
     text-decoration: underline;
 }
+
 .wenda-head {
     margin: 0 auto 10px;
     width: 40px;
@@ -660,6 +852,7 @@ h6 { font-size: 11px; }
     overflow: hidden;
     background: #ccc;
 }
+
 .wendaslider {
     border-left: 1px solid #e3e5e5;
     padding: 10px 100px 0 20px;
@@ -667,6 +860,7 @@ h6 { font-size: 11px; }
     min-height: 85px;
     position: relative;
 }
+
 .wendaslider .triangleicon {
     background: url(/images/wendanew.png) no-repeat 0 -181px;
     width: 8px;
@@ -676,12 +870,14 @@ h6 { font-size: 11px; }
     top: 14px;
     left: -7px;
 }
+
 .wendaslider .wendaquetitle {
     font-size: 14px;
     line-height: 20px;
     color: #363d40;
     position: relative;
 }
+
 .wendaslider .wendaquetitle .isfinish,
 .wendaslider .wendaquetitle .nofinish,
 .wendaslider .wendaquetitle .issport,
@@ -695,35 +891,44 @@ h6 { font-size: 11px; }
     top: 2px;
     left: 0;
 }
+
 .wendaslider .wendaquetitle .isfinish {
     background: url(/images/wendanew.png) no-repeat 0 -54px;
 }
+
 .wendaslider .wendaquetitle .nofinish {
     background: url(/images/wendanew.png) no-repeat 0 -24px;
 }
+
 .wendaslider .wendaquetitle .issport {
     background: url(/images/add-qa.png) no-repeat 0 0px;
 }
+
 .wendaslider .wendaquetitle .isflag {
     background: url(/images/add-qa.png) no-repeat 0 -30px;
 }
+
 .wendaslider .wendaquetitle .wendatitlecon {
     padding-left: 26px;
     word-break: break-all;
     word-wrap: break-word;
     overflow: hidden;
 }
+
 .wendaslider .wendaquetitle .wendatitle {
     color: #6b6b6b;
-    font-weight:bold;
+    font-weight: bold;
 }
+
 .wendaslider .wendaquetitle .wendatitle:hover {
     color: #be3948;
     text-decoration: underline;
 }
+
 .wendaslider .wendaquetitle .istop {
     color: #ff7e00;
 }
+
 .wendaslider .replynumber {
     font-size: 12px;
     position: absolute;
@@ -733,16 +938,19 @@ h6 { font-size: 11px; }
     height: 44px;
     color: #fff;
 }
+
 .wendaslider .replynumber .number {
     line-height: 12px;
     height: 12px;
     text-align: center;
     padding: 7px 0 0 0;
 }
+
 .wendaslider .replynumber .smallfont {
     font-size: 12px;
     font-style: normal;
 }
+
 /*.wendaslider .replynumber .ck {
   display: none;
 }*/
@@ -752,46 +960,57 @@ h6 { font-size: 11px; }
     color: #d0d6d9;
     font-size: 12px;
 }
+
 .wendaslider .replymegfooter em {
     font-style: normal;
     display: inline-block;
     width: 145px;
 }
+
 .wendaslider .replymegfooter .formcourse {
-    position:absolute;
+    position: absolute;
     color: #6b6b6b;
     font-size: 12px;
-    right:10px;
-    bottom:0px;
+    right: 10px;
+    bottom: 0px;
 }
+
 .wendaslider .replymegfooter .formcourse:hover {
     color: #99a1a6;
     text-decoration: underline;
 }
-.wenda-time,.keyword-list{float:left;}
-.list-tag{
-    border:1px solid #edf0f2;
+
+.wenda-time, .keyword-list {
+    float: left;
+}
+
+.list-tag {
+    border: 1px solid #edf0f2;
     border-radius: 15px;
-    background:#edf0f2;
-    color:#99a1a6;
-    font-size:10px;
-    height:20px;
+    background: #edf0f2;
+    color: #99a1a6;
+    font-size: 10px;
+    height: 20px;
     line-height: 20px;
-    padding:0 5px;
+    padding: 0 5px;
     display: inline-block;
 }
+
 .wenda-mkclass {
     margin-top: 27px;
 }
+
 .wenda-mkclass h2 {
     font-size: 14px;
     color: #1f2426;
     border-bottom: 1px solid #b4bbbf;
     padding: 0 0 10px 10px;
 }
+
 .wenda-mkclasscon {
     padding: 0 10px 0 10px;
 }
+
 .wenda-mkclasscon .mkhotlist {
     border-bottom: 1px solid #edf0f2;
     padding: 20px 0;
@@ -802,6 +1021,7 @@ h6 { font-size: 11px; }
     overflow: hidden;
     position: relative;
 }
+
 .wenda-mkclasscon .mkhotlist .hottalk {
     font-size: 12px;
     color: #363d40;
@@ -809,20 +1029,24 @@ h6 { font-size: 11px; }
     width: 180px;
     float: left;
 }
+
 .wenda-mkclasscon .mkhotlist i {
     display: inline-block;
     font-style: normal;
     text-align: center;
 }
+
 .wenda-mkclasscon ul {
     overflow: hidden;
 }
+
 .wenda-mkclasscon ul li {
     padding: 15px 0;
     border-bottom: 1px solid #edf0f2;
     overflow: hidden;
     position: relative;
 }
+
 .wenda-mkclasscon ul li .roll-head {
     display: inline-block;
     width: 40px;
@@ -831,6 +1055,7 @@ h6 { font-size: 11px; }
     overflow: hidden;
     background: #ccc;
 }
+
 .wenda-mkclasscon ul li .rankingnickname, .wenda-mkclasscon ul li .archieve {
     margin-left: 50px;
     display: block;
@@ -840,15 +1065,18 @@ h6 { font-size: 11px; }
     line-height: 18px;
     width: 150px;
 }
+
 .wenda-mkclasscon ul li .rankingnickname {
     color: #363d40;
     font-size: 14px;
     line-height: 18px;
 }
+
 .rankingnum .smallfont {
     font-size: 12px;
     font-style: normal;
 }
+
 .rankingnum {
     line-height: 16px;
     position: absolute;
@@ -858,28 +1086,35 @@ h6 { font-size: 11px; }
     font-size: 14px;
     text-align: center;
 }
+
 .adopt {
     color: #39b94e;
 }
+
 .padtop {
     padding-top: 0;
 }
+
 .browsenum {
     background: #fff;
     height: 44px;
     width: 38px;
 }
+
 .hasanswernum {
     background: #61c771;
     border: 1px solid #61c771;
 }
+
 .hasanswernum .browsenum .number {
     color: #41bc55;
 }
+
 .replycont {
     margin-top: 2px;
     position: relative;
 }
+
 .replycont .replyicon {
     background: url(/images/wendanew.png) no-repeat 0 0;
     position: absolute;
@@ -890,10 +1125,12 @@ h6 { font-size: 11px; }
     display: inline-block;
     vertical-align: middle;
 }
+
 .replydes {
     margin-left: 26px;
     line-height: 20px;
 }
+
 .replydes {
     color: #bcbcbc;
     font-size: 12px;
@@ -902,9 +1139,11 @@ h6 { font-size: 11px; }
     word-break: break-all;
     overflow: hidden;
 }
+
 .praise {
     color: #99a1a6;
 }
+
 .replydes .replyuserhead {
     border-radius: 10px;
     overflow: hidden;
@@ -914,6 +1153,7 @@ h6 { font-size: 11px; }
     position: absolute;
     top: 2px;
 }
+
 .replydes .nickname {
     color: #363d40;
     font-size: 12px;
@@ -927,6 +1167,7 @@ h6 { font-size: 11px; }
     clear: both;
     text-align: center;
 }
+
 .page .disabled_page {
     color: #e5e5e5;
     display: inline-block;
@@ -937,11 +1178,13 @@ h6 { font-size: 11px; }
     text-align: center;
     padding: 2px 12px;
 }
+
 .page .active {
     background: #c9394a;
     color: #fff;
     border-color: #c9394a;
 }
+
 .page a {
     display: inline-block;
     border: 1px solid #c1c1c1;
@@ -963,56 +1206,68 @@ h6 { font-size: 11px; }
     width: 1000px;
     margin: auto;
 }
+
 .qa-icon {
     display: inline-block;
     vertical-align: middle;
     margin-top: -2px;
     background: url(/static/img/wenda-sprite.png) no-repeat;
 }
+
 .qa-left {
     width: 719px;
     border-right: 1px solid #ecf0f3;
     padding-bottom: 999px;
     margin-bottom: -999px;
 }
+
 .qa-left-wrap {
     padding-bottom: 50px;
 }
+
 .qa-right {
     width: 280px;
 }
+
 .qa-header {
     position: relative;
     padding: 10px 20px;
     height: 40px;
 
 }
-.qa-breadcrumb{
+
+.qa-breadcrumb {
     position: relative;
     padding: 10px 20px;
     height: 20px;
     line-height: 20px;
     border-bottom: 1px solid #e3e5e4;
-    color:#99a1a6;
-    font-size:12px;
+    color: #99a1a6;
+    font-size: 12px;
 }
-.qa-breadcrumb a:hover{
+
+.qa-breadcrumb a:hover {
     text-decoration: underline;
 }
+
 .qa-author {
     line-height: 40px;
     font-size: 12px;
 }
+
 .qa-author:link {
     color: #99a1a6;
 }
+
 .qa-author:visited {
     color: #99a1a6;
 }
+
 .qa-author:hover {
     color: #be3948;
     text-decoration: underline;
 }
+
 .qa-author img {
     width: 40px;
     border-radius: 50%;
@@ -1020,6 +1275,7 @@ h6 { font-size: 11px; }
     vertical-align: middle;
     margin-right: 7px;
 }
+
 .qa-code {
     margin-top: 10px;
     display: inline-block;
@@ -1031,9 +1287,11 @@ h6 { font-size: 11px; }
     -o-transition: background-color 0.25s;
     background: #a39ca9 url(../images/code-discus-icon.png) no-repeat 0 0;
 }
+
 .qa-code:hover {
     background-color: #746e7a;
 }
+
 .qa-pictime {
     display: inline-block;
     font-size: 12px;
@@ -1042,14 +1300,17 @@ h6 { font-size: 11px; }
     padding: 0 10px 0 20px;
     background: #b4bbbf url(../img/videointertime.png) no-repeat 0 0;
 }
+
 .qa-pictime:link,
 .qa-pictime:visited {
     color: #fff;
 }
+
 .qa-pictime:hover {
     background-color: #be3948;
     background-position: 0 -30px;
 }
+
 .qa-edit {
     position: absolute;
     right: 20px;
@@ -1064,106 +1325,126 @@ h6 { font-size: 11px; }
     -moz-transition: border-color 0.25s;
     -o-transition: border-color 0.25s;
 }
+
 .qa-edit .qa-icon {
     width: 12px;
     height: 12px;
     margin-right: 5px;
     background-position: 0 -314px;
 }
+
 .qa-edit:hover {
     border-color: #cccccc;
 }
+
 .qa-content {
     padding: 15px 35px;
     border-bottom: 1px solid #e3e5e4;
 }
-.tag-title{
-    border:1px solid #2ea7e0;
+
+.tag-title {
+    border: 1px solid #2ea7e0;
     border-radius: 15px;
-    background:#2ea7e0;
-    height:40px;
+    background: #2ea7e0;
+    height: 40px;
     line-height: 40px;
     color: #fff;
-    padding:0 10px ;
+    padding: 0 10px;
     display: inline-block;
-    margin-top:15px;
-    position:relative;
+    margin-top: 15px;
+    position: relative;
 }
-.tag-introduce{
-    color:#363d40;
+
+.tag-introduce {
+    color: #363d40;
     font-size: 12px;
-    margin-top:20px;
-    border-top:1px solid #e3e5e5;
+    margin-top: 20px;
+    border-top: 1px solid #e3e5e5;
     line-height: 24px;
-    padding-top:20px;
+    padding-top: 20px;
     word-wrap: break-word;
-    word-break:break-all;
+    word-break: break-all;
 }
-.tag-uparrow{
-    position:absolute;
-    background:url("../img/arrow.png") no-repeat 0 -47px;
-    display:inline-block;
-    width:12px;
+
+.tag-uparrow {
+    position: absolute;
+    background: url("../img/arrow.png") no-repeat 0 -47px;
+    display: inline-block;
+    width: 12px;
     height: 7px;
-    top:55px;
-    left:45%;
+    top: 55px;
+    left: 45%;
 }
+
 .qa-content-addon {
     position: relative;
     padding-top: 15px;
     font-size: 12px;
     color: #d0d6d9;
 }
+
 .qa-createtime {
     margin-right: 10px;
 
 }
+
 .qa-course-from:link,
 .qa-course-from:visited {
     color: #6b6b6b;
-    margin-left:15px;
+    margin-left: 15px;
 }
+
 .qa-course-from:hover {
     color: #99a1a6;
     text-decoration: underline;
 }
+
 .qa-total-comment,
 .qa-view-num {
     margin-left: 20px;
     color: #c2c8cb;
 }
+
 .qa-comments {
     padding: 0 15px;
 }
+
 .qa-comment {
     position: relative;
     *zoom: 1;
     min-height: 80px;
     border-bottom: 1px solid #e3e5e5;
 }
+
 .qa-comment-wrap {
     padding: 10px 20px 10px 10px;
 }
+
 .qa-comment-author {
     position: absolute;
     left: 0;
     top: 10px;
     line-height: 1em;
-    width: 80px;
+    width: 60px;
     text-align: center;
 }
+
 .qa-comment-author img {
     width: 40px;
     border-radius: 50%;
+    display: inline-block;
 }
+
 .qa-comment-author a {
     font-size: 12px;
     color: #99a1a6;
 }
+
 .qa-comment-author a:hover {
     color: #be3948;
     text-decoration: underline;
 }
+
 .qa-comment-nick {
     display: block;
     line-height: 1.1em;
@@ -1171,18 +1452,21 @@ h6 { font-size: 11px; }
     word-break: break-all;
     word-wrap: break-word;
 }
+
 .qa-comment-utype {
     display: inline-block;
     width: 12px;
     height: 12px;
     background: url(/static/img/wenda-sprite.png?1) no-repeat 0 -292px;
 }
+
 .qa-comment-d {
     position: relative;
     margin-left: 80px;
     padding: 10px 0 10px 20px;
     border-left: 1px solid #e3e5e5;
 }
+
 .qa-triangle-left {
     position: absolute;
     width: 0;
@@ -1193,6 +1477,7 @@ h6 { font-size: 11px; }
     border-width: 8px;
     border-color: transparent #e3e5e5 transparent transparent;
 }
+
 .qa-triangle-left i {
     position: absolute;
     top: -8px;
@@ -1203,6 +1488,7 @@ h6 { font-size: 11px; }
     border-width: 8px;
     border-color: transparent #fff transparent transparent;
 }
+
 .qa-comment-c {
     color: #444;
     line-height: 1.7em;
@@ -1211,46 +1497,56 @@ h6 { font-size: 11px; }
     word-wrap: break-word;
     overflow: hidden;
 }
+
 .qa-comment-c strong {
     font-style: inherit;
     font-weight: bold;
 }
+
 .qa-comment-c em {
     font-style: italic;
 }
+
 .qa-comment-addon {
     position: relative;
     padding: 10px 0 0;
     font-size: 12px;
     color: #d0d6d9;
 }
+
 .qa-comment-addon-r {
     position: absolute;
     right: 0;
     top: 15px;
 }
+
 .qa-total-reply {
     margin-right: 20px;
     cursor: pointer;
 }
+
 .qa-total-reply:hover,
 .qa-total-reply.qa-total-reply-active {
     color: #656e73;
 }
+
 .qa-total-reply:hover .qa-icon,
 .qa-total-reply.qa-total-reply-active .qa-icon {
     background-position: 0 -361px;
 }
+
 .qa-total-reply .qa-icon {
     width: 16px;
     height: 14px;
     margin-right: 3px;
     background-position: 0 -337px;
 }
+
 .qa-tr-up {
     position: relative;
     display: none;
 }
+
 .qa-tr-up b {
     position: absolute;
     width: 0;
@@ -1261,6 +1557,7 @@ h6 { font-size: 11px; }
     border-width: 7px;
     border-color: transparent transparent #cecece transparent;
 }
+
 .qa-tr-up i {
     position: absolute;
     width: 0;
@@ -1271,11 +1568,13 @@ h6 { font-size: 11px; }
     border-width: 7px;
     border-color: transparent transparent #fff transparent;
 }
+
 .qa-comment-support {
     cursor: pointer;
     vertical-align: middle;
     line-height: 1em;
 }
+
 .qa-comment-support .qa-icon {
     width: 15px;
     height: 15px;
@@ -1283,80 +1582,99 @@ h6 { font-size: 11px; }
     margin-top: -8px;
     background-position: 0 -86px;
 }
+
 .qa-comment-support.qa-comment-supported,
 .qa-comment-support:hover {
     color: #be3948;
 }
+
 .qa-comment-support.qa-comment-supported .qa-icon,
 .qa-comment-support:hover .qa-icon {
     background-position: 0 -111px;
 }
+
 .qa-comment-accept {
     display: none;
     margin-right: 20px;
     line-height: 1em;
     cursor: pointer;
 }
+
 .qa-comment-accept .qa-icon {
     width: 16px;
     height: 16px;
     background: url(../img/accpet.png) no-repeat 0 0;
     margin: -3px 3px 0 0;
 }
+
 .qa-comment-accept:hover {
     color: #8fc31f;
 }
+
 .qa-comment-accept:hover .qa-icon {
     background: url(/static/img/wenda-sprite.png?1) no-repeat 0 -60px;
 }
+
 .qa-comment-correct {
     color: #8fc31f;
     font-size: 12px;
     margin-right: 15px;
 }
+
 .qa-comment-correct .qa-icon {
     width: 16px;
     height: 16px;
     margin-right: 3px;
     background-position: 0 -60px;
 }
+
 .qa-replies {
     margin-bottom: -1px;
 }
+
 .qa-reply {
     display: none;
     border-top: 1px solid #e3e5e5;
     padding-left: 60px;
 }
+
 .qa-reply-ibox {
     padding: 20px 0;
     border-bottom: 1px solid #e3e5e5;
 }
+
 .qa-reply-iarea {
     line-height: 1em;
 }
+
 .qa-reply-ifoot {
     padding: 10px 0;
 }
+
 .qa-reply-ibox-default .qa-reply-ifoot {
     display: none;
 }
+
 .qa-reply-ibox-default textarea {
     min-height: 22px;
 }
+
 .qa-reply-iavator {
     width: 60px;
     text-align: center;
 }
+
 .qa-reply-iavator img {
     width: 40px;
     border-radius: 50%;
 }
+
 .qa-reply-iwrap {
     padding: 0 7px;
     overflow: hidden;
     margin-left: 60px;
 }
+
 .qa-reply-iwrap textarea {
     border: 1px solid #e3e5e5;
     padding: 7px;
@@ -1371,20 +1689,24 @@ h6 { font-size: 11px; }
     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
+
 .qa-reply-iwrap textarea:focus {
     border-color: #7bd089;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c6ebcc;
     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c6ebcc;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c6ebcc;
 }
+
 .qa-reply-iwrap .qa-reply-ipt-default {
     overflow: hidden;
     color: #999999;
 }
+
 .qa-comment-input {
     padding: 10px 25px;
     position: relative;
 }
+
 .qa-ci-avator {
     position: absolute;
     top: 10px;
@@ -1393,13 +1715,16 @@ h6 { font-size: 11px; }
     text-align: center;
     padding-top: 10px;
 }
+
 .qa-ci-avator img {
     width: 40px;
     border-radius: 50%;
 }
+
 .qa-ci-wrap {
     margin-left: 80px;
 }
+
 .qa-ci-inner {
     padding: 7px 7px 0;
     border: 1px solid #e3e5e5;
@@ -1408,6 +1733,7 @@ h6 { font-size: 11px; }
     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
+
 .qa-ci-textarea {
     border: none;
     resize: none;
@@ -1419,6 +1745,7 @@ h6 { font-size: 11px; }
     width: 573px;
     color: #555;
 }
+
 .qa-ci-countword {
     font-size: 12px;
     line-height: 1em;
@@ -1426,34 +1753,115 @@ h6 { font-size: 11px; }
     color: #d1d6dc;
     padding-bottom: 3px;
 }
+
 .qa-ci-inner-focus {
     border-color: #7bd089;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c6ebcc;
     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c6ebcc;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c6ebcc;
 }
+
 .qa-ci-footer {
     padding: 10px 0;
 }
+
 .qa-comment-page {
     text-align: center;
     border-top: 1px solid #e3e5e5;
 }
 
+.qa-reply-item {
+    position: relative;
+    border-bottom: 1px solid #e3e5e5;
+}
+
+.qa-reply-item-author {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    line-height: 1em;
+}
+
+.qa-reply-item-inner {
+    margin-left: 60px;
+    font-size: 12px;
+    padding: 7px 10px;
+}
+
+.qa-reply-nick:link, .qa-reply-nick:visited {
+    color: #be3948;
+}
+
+.q-reply-item-c {
+    color: #363d40;
+    font-size: 12px;
+    line-height: 1.7em;
+    padding-top: 3px;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.qa-reply-item-foot {
+    color: #d0d6d9;
+    font-size: 12px;
+}
+
+#contents .qa-reply-item-author img {
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+}
 
 .source-add form {
     padding: 40px 0;
 }
+
 .source-add form input {
     border: 1px solid #e2e2e2;
 }
+
 .resource .qa-left {
     width: auto;
 }
-.resource .redactor_box,.resource .redactor_box textarea {
+
+.resource .redactor_box, .resource .redactor_box textarea {
     width: 869px;
 }
+
 .redactor_box, .redactor_box textarea {
     width: 587px;
     float: right;
+}
+
+/*-----------------------------------------------------------*/
+/* user index
+/*----------------------------------------------------------*/
+
+.user .wenda-slider {
+    width: 221px;
+    padding: 0 0 2000px;
+}
+
+.user .wendaslider, .user .wenda-listcon {
+    border: none;
+}
+
+.user .wendaslider {
+    width: 630px;
+}
+
+.user .wenda-main {
+    width: 750px;
+}
+
+.user .info {
+    padding-left: 10px;
+}
+
+.user-login-out {
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+    font-size: 12px;
 }

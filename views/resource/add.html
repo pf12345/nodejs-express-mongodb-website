@@ -1,5 +1,11 @@
 {% extends '../shared/layout.html' %}
 {% block content %}
+<style>
+    .redactor_box, .redactor_box textarea {
+        float: none;
+        margin-bottom: 20px;
+    }
+</style>
 <div id="contents">
 <div class="clearfix">
     <div class="source-add">
@@ -18,7 +24,6 @@
             <input type="text" name="imagePath" placeholder="imagePath"/>
             <label>content</label>
             <div id="content" name="content">
-
             </div>
             <label></label>
             <input type="submit" class="more" value="提交">

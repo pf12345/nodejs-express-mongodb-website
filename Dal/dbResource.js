@@ -68,6 +68,41 @@
     });
   };
 
+
+  /*
+      修改查看数量
+   */
+
+  exports.changeViewNum = function(resourceId, cb) {
+    return dbHelper.connectDB("resource", cb, function(collection) {
+      return collection.findOne({
+        _id: ObjectId(resourceId)
+      }, function(err, resource) {
+        var viewNum;
+        if (err) {
+          return cb(new Error(err));
+        } else {
+          viewNum = resource.viewNum;
+          viewNum++;
+          return collection.update({
+            _id: ObjectId(resourceId)
+          }, {
+            $set: {
+              viewNum: viewNum
+            }
+          }, function(err) {
+            mongodb.close();
+            if (err) {
+              return cb(new Error(err));
+            } else {
+              return cb(null, 'ok');
+            }
+          });
+        }
+      });
+    });
+  };
+
 }).call(this);
 
 //# sourceMappingURL=dbResource.js.map

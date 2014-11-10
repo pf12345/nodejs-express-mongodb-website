@@ -1,0 +1,8 @@
+2014-11-1 16:45:34=>"render email:Error: ENOENT, open 'G:\\git\\nodejs-express-mongodb-website\\service\\views\\email\\index.html'"
+2014-11-1 16:45:34=>"render email file:Error: ENOENT, open 'G:\\git\\nodejs-express-mongodb-website\\service\\views\\email\\index.html'"
+2014-11-1 16:47:2=>"render email file:Error: ENOENT, open 'G:\\git\\nodejs-express-mongodb-website\\service\\views\\email\\index.html'"
+2014-11-1 16:47:2=>"render email:Error: ENOENT, open 'G:\\git\\nodejs-express-mongodb-website\\service\\views\\email\\index.html'"
+2014-11-1 16:47:29=>"render email file:Error: ENOENT, open 'G:\\git\\nodejs-express-mongodb-website\\views\\email\\index.html'"
+2014-11-1 16:47:29=>"render email:Error: ENOENT, open 'G:\\git\\nodejs-express-mongodb-website\\views\\email\\index.html'"
+2014-11-1 16:48:2=>"render email file:Error: ENOENT, open 'G:\\git\\nodejs-express-mongodb-website\\views\\email\\index.html'"
+2014-11-1 16:48:2=>"render email:Error: ENOENT, open 'G:\\git\\nodejs-express-mongodb-website\\views\\email\\index.html'"

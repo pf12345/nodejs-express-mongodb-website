@@ -1,8 +1,8 @@
-settings = require('../settings')
+config = require('../config')
 Db = require('mongodb').Db
 Connection = require('mongodb').Connection
 Server = require('mongodb').Server
-mongodb = new Db(settings.db, new Server(settings.host, Connection.DEFAULT_PORT, {auto_reconnect:true}), {safe: true})
+mongodb = new Db(config.dbInfo.db, new Server(config.dbInfo.host, Connection.DEFAULT_PORT, {auto_reconnect:true}), {safe: true})
 
 exports.newDb = () ->
 	return mongodb

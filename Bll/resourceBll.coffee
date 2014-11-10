@@ -19,10 +19,14 @@ exports.add = (info, cb) ->
 exports.all = (cb) ->
 	dbResource.all cb
 
-
-
 ###
     获取单个资源
 ###
 exports.single = (id, cb) ->
 	dbResource.single id, cb
+
+###
+    修改查看数量
+###
+exports.changeViewNum = (resourceId, cb) ->
+	dbResource.changeViewNum resourceId, cb

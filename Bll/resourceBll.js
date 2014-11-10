@@ -35,6 +35,15 @@
     return dbResource.single(id, cb);
   };
 
+
+  /*
+      修改查看数量
+   */
+
+  exports.changeViewNum = function(resourceId, cb) {
+    return dbResource.changeViewNum(resourceId, cb);
+  };
+
 }).call(this);
 
 //# sourceMappingURL=resourceBll.js.map

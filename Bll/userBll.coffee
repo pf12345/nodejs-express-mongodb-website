@@ -25,3 +25,16 @@ exports.getUserInfo = (id, cb) ->
 ###
 exports.getAllUser = (cb) ->
 	dbUser.getAllUser cb
+
+###
+    修改提出问题数量
+###
+exports.changeAnsNum = (userId, cb) ->
+	dbUser.changeAnsNum userId, cb
+
+
+###
+    修改回答问题数量
+###
+exports.changeResNum = (userId, cb) ->
+	dbUser.changeResNum userId, cb

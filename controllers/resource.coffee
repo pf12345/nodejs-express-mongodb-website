@@ -26,7 +26,6 @@ exports.index = (req, res) ->
 		else
 			items.map (item) ->
 				item.addTime = moment(item.addTime).fromNow()
-			console.log(items)
 			res.render "index",
 				loopResource: true
 				items: items
@@ -69,12 +68,14 @@ exports.single = (req, res) ->
 		else
 			type = source.type
 			source.addTime = moment(source.addTime).fromNow()
-			console.log(source)
-			if type is 'pdf'
-				res.render "single_pdf",
-					isLogin: userHelper.isLogin(req, res)
-					source: source
-			else
-				res.render "single_text",
-					isLogin: userHelper.isLogin(req, res)
-					source: source
+			resourceBll.changeViewNum id, (err) ->
+				if err
+					console.log('resource change view num error:' +err)
+				if type is 'pdf' or type is 'ppt'
+					res.render "single_pdf",
+						isLogin: userHelper.isLogin(req, res)
+						source: source
+				else
+					res.render "single_text",
+						isLogin: userHelper.isLogin(req, res)
+						source: source

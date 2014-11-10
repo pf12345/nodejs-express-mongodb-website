@@ -61,5 +61,38 @@ exports.getAllUser = (cb) ->
 			else
 				cb null,items
 
+###
+    修改回答问题数量
+###
+exports.changeResNum = (userId, cb)->
+	dbHelper.connectDB "userInfo", cb, (collection) ->
+		collection.findOne { _id: ObjectId(userId)},(err, user) ->
+			if err
+				cb new Error(err)
+			else
+				resNum = user.resNum
+				resNum++
+				collection.update {_id: ObjectId(userId)},{$set:{resNum:resNum}},(err)->
+					mongodb.close()
+					if err
+						cb new Error(err)
+					else
+						cb null, 'ok'
 
-
+###
+    修改提出问题数量
+###
+exports.changeAnsNum = (userId, cb)->
+	dbHelper.connectDB "userInfo", cb, (collection) ->
+		collection.findOne { _id: ObjectId(userId)},(err, user) ->
+			if err
+				cb new Error(err)
+			else
+				ansNum = user.ansNum
+				ansNum++
+				collection.update {_id: ObjectId(userId)},{$set:{ansNum:ansNum}},(err)->
+					mongodb.close()
+					if err
+						cb new Error(err)
+					else
+						cb null, 'ok'

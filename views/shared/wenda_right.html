@@ -20,11 +20,11 @@
             <ul>
                 {% for user in users %}
                 <li>
-                    <a href="#" class="fl roll-head" target="_blank" title="{{user.name}}"><img
+                    <a href="/user/{{user._id.toString()}}" class="fl roll-head" target="_blank" title="{{user.name}}"><img
                             src="{{user.avatar}}" width="40"
                             height="40"></a>
-                    <a href="/space/u/uid/255777" target="_blank" title="偌颜宁" class="rankingnickname">{{user.name}}</a>
-                    <i class="adopt rankingnum">{{user.viewNum || 0}}<br><i class="smallfont">回答</i></i>
+                    <a href="/user/{{user._id.toString()}}" target="_blank" title="偌颜宁" class="rankingnickname">{{user.name}}</a>
+                    <i class="adopt rankingnum">{{user.resNum || 0}}<br><i class="smallfont">回答</i></i>
                 </li>
                 {% endfor %}
 

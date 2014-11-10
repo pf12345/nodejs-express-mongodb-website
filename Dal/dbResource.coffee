@@ -39,3 +39,21 @@ exports.all = (cb) ->
 			else
 				cb null, items
 
+
+###
+    修改查看数量
+###
+exports.changeViewNum = (resourceId, cb)->
+	dbHelper.connectDB "resource", cb, (collection) ->
+		collection.findOne { _id: ObjectId(resourceId)},(err, resource) ->
+			if err
+				cb new Error(err)
+			else
+				viewNum = resource.viewNum
+				viewNum++
+				collection.update {_id: ObjectId(resourceId)},{$set:{viewNum:viewNum}},(err)->
+					mongodb.close()
+					if err
+						cb new Error(err)
+					else
+						cb null, 'ok'
